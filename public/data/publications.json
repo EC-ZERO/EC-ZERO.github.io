@@ -1,0 +1,32 @@
+[
+    {
+        "year": "2026",
+        "title": "Atomic-scale insights into the electrocatalytic reduction of CO2 on single-atom catalysts",
+        "authors": "Zhang, J., Wang, L., & Smith, A.",
+        "journal": "Nature Communications",
+        "doi": "10.1038/s41467-026-12345-x",
+        "link": "https://doi.org/10.1038/s41467-026-12345-x",
+        "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
+        "highlight": true
+    },
+    {
+        "year": "2025",
+        "title": "High-entropy alloy nanoparticles as efficient electrocatalysts for oxygen evolution reaction",
+        "authors": "Li, M., Chen, H., & Wang, L.",
+        "journal": "Journal of the American Chemical Society",
+        "doi": "10.1021/jacs.5b12345",
+        "link": "https://doi.org/10.1021/jacs.5b12345",
+        "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
+        "highlight": true
+    },
+    {
+        "year": "2025",
+        "title": "Surface engineering of metal-organic frameworks for enhanced electrocatalytic activity",
+        "authors": "Wang, L., & Smith, A.",
+        "journal": "Advanced Materials",
+        "doi": "10.1002/adma.202512345",
+        "link": "https://doi.org/10.1002/adma.202512345",
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        "highlight": false
+    }
+]

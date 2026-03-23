@@ -37,45 +37,76 @@ async function loadHtmlSnippets() {
     }
 }
 
-// 3. Load News (Markdown)
+// 3. Load News (JSON)
 async function loadNews(limit = null) {
     const container = document.getElementById('news-container');
     if (!container) return;
 
-    const md = await fetchContent('/data/news.md');
-    if (!md) return;
+    const jsonText = await fetchContent('/data/news.json');
+    if (!jsonText) return;
 
     try {
-        if (limit) {
-            const items = md.split('###').filter(i => i.trim()).slice(0, limit);
-            const limitedMd = items.map(i => '###' + i).join('\n\n');
-            container.innerHTML = marked.parse(limitedMd);
-        } else {
-            container.innerHTML = marked.parse(md);
-        }
+        const newsData = JSON.parse(jsonText);
+        const displayData = limit ? newsData.slice(0, limit) : newsData;
+
+        container.innerHTML = displayData.map(item => `
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer">
+                    <span class="absolute top-4 left-4 px-3 py-1 bg-brand text-white text-xs font-bold rounded-full uppercase tracking-wider">${item.tag}</span>
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-gray-500 mb-2 font-medium"><i class="far fa-calendar-alt mr-2"></i>${item.date}</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand transition-colors line-clamp-2">${item.title}</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">${item.content}</p>
+                </div>
+            </div>
+        `).join('');
     } catch (e) {
-        console.error("Markdown parsing error:", e);
+        console.error("News JSON parsing error:", e);
     }
 }
 
-// 4. Load Publications (Markdown)
+// 4. Load Publications (JSON)
 async function loadPublications(limit = null) {
     const container = document.getElementById('publications-container');
     if (!container) return;
 
-    const md = await fetchContent('/data/publications.md');
-    if (!md) return;
+    const jsonText = await fetchContent('/data/publications.json');
+    if (!jsonText) return;
 
     try {
-        if (limit) {
-            const items = md.split('###').filter(i => i.trim()).slice(0, limit);
-            const limitedMd = items.map(i => '###' + i).join('\n\n');
-            container.innerHTML = marked.parse(limitedMd);
-        } else {
-            container.innerHTML = marked.parse(md);
-        }
+        const pubData = JSON.parse(jsonText);
+        const displayData = limit ? pubData.filter(p => p.highlight).slice(0, limit) : pubData;
+
+        container.innerHTML = displayData.map(pub => `
+            <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="w-full md:w-48 h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50">
+                        <img src="${pub.image}" alt="Publication highlight" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" referrerpolicy="no-referrer">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="px-3 py-1 bg-blue-50 text-brand text-xs font-bold rounded-md uppercase tracking-wider">${pub.year}</span>
+                            <span class="text-gray-400 text-sm font-medium italic">${pub.journal}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand transition-colors leading-tight">
+                            <a href="${pub.link}" target="_blank">${pub.title}</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 font-medium">${pub.authors}</p>
+                        <div class="flex gap-4">
+                            <a href="${pub.link}" target="_blank" class="text-sm font-bold text-brand hover:underline flex items-center gap-1">
+                                <i class="fas fa-external-link-alt text-xs"></i> View Online
+                            </a>
+                            <span class="text-gray-300">|</span>
+                            <span class="text-sm text-gray-400 font-mono">DOI: ${pub.doi}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
     } catch (e) {
-        console.error("Markdown parsing error:", e);
+        console.error("Publications JSON parsing error:", e);
     }
 }
 
