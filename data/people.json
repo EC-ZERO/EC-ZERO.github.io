@@ -1,0 +1,52 @@
+{
+  "lab_name": "XXX Electrocatalysis Group",
+  "pi": {
+    "name": "Prof. Dr. XXX XXX",
+    "title": "Principal Investigator | Associate Professor",
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71f1536780?auto=format&fit=crop&w=400&h=400&q=80",
+    "bio": "Prof. XXX received his PhD from XXX University and conducted postdoctoral research at XXX. His research interests include operando spectroscopy, electrocatalysis, and nanomaterials synthesis. He has published over 100 papers in high-impact journals.",
+    "email": "pi-email@university.edu",
+    "google_scholar": "#",
+    "linkedin": "#"
+  },
+  "postdocs": [
+    {
+      "name": "Dr. John Doe",
+      "title": "Postdoctoral Fellow",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "PhD, MIT"
+    },
+    {
+      "name": "Dr. Alan Smith",
+      "title": "Postdoctoral Fellow",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "PhD, Stanford"
+    }
+  ],
+  "phd_students": [
+    {
+      "name": "Jane Smith",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 4"
+    },
+    {
+      "name": "Sarah Wang",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 3"
+    },
+    {
+      "name": "David Lee",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 2"
+    },
+    {
+      "name": "Kevin Zhang",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 1"
+    }
+  ]
+}
