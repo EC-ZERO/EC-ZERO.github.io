@@ -131,9 +131,36 @@ async function loadPeople() {
                     <p class="text-brand font-semibold text-lg mb-6">${data.pi.title}</p>
                     <p class="text-gray-600 leading-relaxed mb-8">${data.pi.bio}</p>
                     <div class="flex gap-4">
-                        <a href="mailto:${data.pi.email}" class="px-6 py-2 bg-brand text-white rounded-full font-semibold hover:bg-brand-dark transition-colors">Email PI</a>
                         <a href="${data.pi.google_scholar}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Scholar</a>
                     </div>
+                </div>
+            </div>
+
+            <!-- Teachers  -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Teachers</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    ${data.teachers.map(t => `
+                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
+                            <img src="${t.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="font-bold text-gray-900">${t.name}</h4>
+                            <p class="text-sm text-gray-500">${t.details}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- Engineers -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Engineers</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    ${data.engineers.map(e => `
+                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
+                            <img src="${e.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="font-bold text-gray-900">${e.name}</h4>
+                            <p class="text-sm text-gray-500">${e.details}</p>
+                        </div>
+                    `).join('')}
                 </div>
             </div>
 
@@ -164,6 +191,35 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+
+            <!-- Master Students -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Master Students</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    ${data.master_students.map(m => `
+                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
+                            <img src="${m.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="font-bold text-gray-900">${m.name}</h4>
+                            <p class="text-sm text-gray-500">${m.details}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- Undergraduate Students -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Undergraduate Students</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    ${data.undergraduate_students.map(u => `
+                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
+                            <img src="${u.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <h4 class="font-bold text-gray-900">${u.name}</h4>
+                            <p class="text-sm text-gray-500">${u.details}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
         `;
         container.innerHTML = html;
     } catch (e) {
