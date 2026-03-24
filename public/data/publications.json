@@ -16,7 +16,7 @@
     "journal": "Journal of the American Chemical Society",
     "doi": "10.1021/jacs.5c17778",
     "link": "https://doi.org/10.1021/jacs.5c17778",
-    "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/2_JACS_trimmed.webp",
     "highlight": false
   },
   {
@@ -36,7 +36,7 @@
     "journal": "Nature Communications",
     "doi": "10.1038/s41467-025-60728-y",
     "link": "https://doi.org/10.1038/s41467-025-60728-y",
-    "image": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_comm.webp",
     "highlight": false
   },
   {
@@ -46,7 +46,7 @@
     "journal": "Energy & Environmental Science",
     "doi": "10.1039/D5EE02132D",
     "link": "https://doi.org/10.1039/D5EE02132D",
-    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/5_Energy_Environmental_Science_trimmed.webp",
     "highlight": false
   },
   {
@@ -56,7 +56,7 @@
     "journal": "PNAS",
     "doi": "10.1073/pnas.2318652121",
     "link": "https://doi.org/10.1073/pnas.2318652121",
-    "image": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/pnas_trimmed.webp",
     "highlight": false
   },
   {
@@ -66,7 +66,7 @@
     "journal": "Applied Catalysis B",
     "doi": "10.1016/j.apcatb.2024.124404",
     "link": "https://doi.org/10.1016/j.apcatb.2024.124404",
-    "image": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/7_Applied_Catalysis_B_trimmed.webp",
     "highlight": false
   },
   {
@@ -76,7 +76,7 @@
     "journal": "Advanced Materials",
     "doi": "10.1002/adma.202207041",
     "link": "https://doi.org/10.1002/adma.202207041",
-    "image": "https://images.unsplash.com/photo-1554475900-0a0350e3fc7b?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/8_Advanced_Materials_trimmed.webp",
     "highlight": false
   },
   {
@@ -86,7 +86,7 @@
     "journal": "Nature Communications",
     "doi": "10.1038/s41467-023-38212-2",
     "link": "https://doi.org/10.1038/s41467-023-38212-2",
-    "image": "https://images.unsplash.com/photo-1532634896-26909d0d4b89?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_comm.webp",
     "highlight": false
   },
   {
@@ -96,7 +96,7 @@
     "journal": "Small Science",
     "doi": "10.1002/smsc.202300065",
     "link": "https://doi.org/10.1002/smsc.202300065",
-    "image": "https://images.unsplash.com/photo-1501556466850-7c9ad1fccb4e?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/10_small_science_trimmed.webp",
     "highlight": false
   },
   {
@@ -106,7 +106,7 @@
     "journal": "ACS Nano",
     "doi": "10.1021/acsnano.2c04603",
     "link": "https://doi.org/10.1021/acsnano.2c04603",
-    "image": "https://images.unsplash.com/photo-1628863012214-704afe2a61da?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/11_acs_nano_trimmed.webp",
     "highlight": false
   },
   {
@@ -116,7 +116,7 @@
     "journal": "Nature Communications",
     "doi": "10.1038/s41467-021-23896-1",
     "link": "https://doi.org/10.1038/s41467-021-23896-1",
-    "image": "https://images.unsplash.com/photo-1576086213369-97a306dca665?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_comm.webp",
     "highlight": false
   },
   {
@@ -126,7 +126,7 @@
     "journal": "Nature Communications",
     "doi": "10.1038/s41467-021-22865-y",
     "link": "https://doi.org/10.1038/s41467-021-22865-y",
-    "image": "https://images.unsplash.com/photo-1516339901600-2e3a82046d54?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_comm.webp",
     "highlight": false
   },
   {
@@ -136,7 +136,7 @@
     "journal": "Current Opinion in Electrochemistry",
     "doi": "10.1016/j.coelec.2021.100804",
     "link": "https://doi.org/10.1016/j.coelec.2021.100804",
-    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80",
+    "image": "public/images/publications/14_Current_Opinion_in_Electrochemistry_trimmed.webp",
     "highlight": false
   },
   {
