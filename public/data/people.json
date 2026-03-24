@@ -77,7 +77,7 @@
       "details": "Year 1"
     }
   ],
-  "masters_students": [
+  "master_students": [
     {
       "name": "Emily Davis",
       "title": "Master's Student",
@@ -95,7 +95,7 @@
     {
       "name": "Jessica Miller",
       "title": "Undergraduate Research Assistant",
-      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80",
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80"
       },
       {
         "name": "Daniel Anderson",
