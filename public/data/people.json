@@ -1,12 +1,12 @@
 {
   "lab_name": "XXX Electrocatalysis Group",
   "pi": {
-    "name": "Prof. Dr. XXX XXX",
+    "name": "Assoc. Prof. Tianze WU",
     "title": "Principal Investigator | Associate Professor",
-    "photo": "https://images.unsplash.com/photo-1559839734-2b71f1536780?auto=format&fit=crop&w=400&h=400&q=80",
+    "photo": "https://i1.rgstatic.net/ii/profile.image/11431281310222443-1739755855887_Q128/Tianze-Wu-2.jpg",
     "bio": "Prof. XXX received his PhD from XXX University and conducted postdoctoral research at XXX. His research interests include operando spectroscopy, electrocatalysis, and nanomaterials synthesis. He has published over 100 papers in high-impact journals.",
-    "email": "pi-email@university.edu",
-    "google_scholar": "#",
+    "email": "～",
+    "google_scholar": "https://scholar.google.com/citations?user=HjobtBAAAAAJ&hl=en",
     "linkedin": "#"
   },
   "teachers": [
