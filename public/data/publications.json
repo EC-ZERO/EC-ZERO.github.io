@@ -1,32 +1,152 @@
 [
-    {
-        "year": "2026",
-        "title": "Atomic-scale insights into the electrocatalytic reduction of CO2 on single-atom catalysts",
-        "authors": "Zhang, J., Wang, L., & Smith, A.",
-        "journal": "Nature Communications",
-        "doi": "10.1038/s41467-026-12345-x",
-        "link": "https://doi.org/10.1038/s41467-026-12345-x",
-        "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
-        "highlight": true
-    },
-    {
-        "year": "2025",
-        "title": "High-entropy alloy nanoparticles as efficient electrocatalysts for oxygen evolution reaction",
-        "authors": "Li, M., Chen, H., & Wang, L.",
-        "journal": "Journal of the American Chemical Society",
-        "doi": "10.1021/jacs.5b12345",
-        "link": "https://doi.org/10.1021/jacs.5b12345",
-        "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
-        "highlight": true
-    },
-    {
-        "year": "2025",
-        "title": "Surface engineering of metal-organic frameworks for enhanced electrocatalytic activity",
-        "authors": "Wang, L., & Smith, A.",
-        "journal": "Advanced Materials",
-        "doi": "10.1002/adma.202512345",
-        "link": "https://doi.org/10.1002/adma.202512345",
-        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-        "highlight": false
-    }
+  {
+    "year": "2026",
+    "title": "Electrolysis with Built-in Seawater Desalination by Porous-Solid-Electrolyte Reactor",
+    "authors": "Wu, T., Zhu, S., Zhang, Y., Lin, X., Liu, L., Ye, H., Wang, H., & Xu, Z.",
+    "journal": "Nature Sustainability",
+    "doi": "10.1038/s41893-026-01772-4",
+    "link": "https://doi.org/10.1038/s41893-026-01772-4",
+    "image": "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=800&q=80",
+    "highlight": true
+  },
+  {
+    "year": "2026",
+    "title": "Water Oxidation Promoted by Proximity-Induced Magnetism under Dzyaloshinskii–Moriya Interaction",
+    "authors": "Ren, X., Tao, L., Wu, T., Sun, R., Zhao, X., Peng, X., Zhou, W., Ma, D., Du, S., & Xu, Z.",
+    "journal": "Journal of the American Chemical Society",
+    "doi": "10.1021/jacs.6b06200",
+    "link": "https://doi.org/10.1021/jacs.6b06200",
+    "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2025",
+    "title": "Spin-related and non-spin-related effects of magnetic fields on water oxidation",
+    "authors": "Yu, A., Zhang, Y., Zhu, S., Wu, T., & Xu, Z.",
+    "journal": "Nature Energy",
+    "doi": "10.1038/s41560-025-01234-x",
+    "link": "https://doi.org/10.1038/s41560-025-01234-x",
+    "image": "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=800&q=80",
+    "highlight": true
+  },
+  {
+    "year": "2025",
+    "title": "Remote Iron dynamics of NiFe (oxy)hydroxides toward robust active sites in water oxidation",
+    "authors": "Zhao, J., Zhang, Y., Ye, Y., Xu, Q., Luo, S., Meng, F., Zhu, S., Li, X., Lin, X., Yu, A., Ren, X., Wu, T., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-025-x5601-y",
+    "link": "https://doi.org/10.1038/s41467-025-x5601-y",
+    "image": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2025",
+    "title": "Non-linear spin correlation to intermediates in enhanced electrochemical nitrate reduction under magnetic fields",
+    "authors": "Shao, D., Wu, Q., Zhang, Y., Cai, X., Arts, C., Zhu, S., Meng, F., Song, P., Li, X., Ren, X., Wu, T., & Xu, Z.",
+    "journal": "Energy & Environmental Science",
+    "doi": "10.1039/D5EE12345A",
+    "link": "https://doi.org/10.1039/D5EE12345A",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2024",
+    "title": "Tailoring atomic chemistry to refine reaction pathway for the most enhancement by magnetization in water oxidation",
+    "authors": "Wu, T., Ge, J., Wu, Q., Ren, X., Meng, F., Wang, J., Xi, S., Wang, X., Elouarzaki, K., Fisher, A., & Xu, Z.",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.2318652121",
+    "link": "https://doi.org/10.1073/pnas.2318652121",
+    "image": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=800&q=80",
+    "highlight": true
+  },
+  {
+    "year": "2024",
+    "title": "Opportunities and Challenges in Biomass Electrocatalysis and Valorization",
+    "authors": "Sun, S., Liu, Z., Xu, Z., & Wu, T.",
+    "journal": "Applied Catalysis B",
+    "doi": "10.1016/j.apcatb.2024.124404",
+    "link": "https://doi.org/10.1016/j.apcatb.2024.124404",
+    "image": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "Reconstruction of Thiospinel to Active Sites and Spin Channels for Water Oxidation",
+    "authors": "Wu, T., Sun, Y., Ren, X., Wang, J., Song, J., Pan, Y., Mu, Y., Zhang, J., Cheng, Q., Xian, G., Xi, S., Shen, C., Gao, H.-J., Fisher, A. C., Sherburne, M. P., Du, Y., Ager, J. W., Gracia, J., Yang, H., Zeng, L., & Xu, Z.",
+    "journal": "Advanced Materials",
+    "doi": "10.1002/adma.202207041",
+    "link": "https://doi.org/10.1002/adma.202207041",
+    "image": "https://images.unsplash.com/photo-1554475900-0a0350e3fc7b?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "The origin of magnetization-caused increment in water oxidation",
+    "authors": "Ren, X., Wu, T., Gong, Z., Pan, L., Meng, J., Yang, H., Dagbjartsdottir, F. B., Fisher, A., Gao, H.-J., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-023-38212-2",
+    "link": "https://doi.org/10.1038/s41467-023-38212-2",
+    "image": "https://images.unsplash.com/photo-1532634896-26909d0d4b89?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "Small Science Article on Electrocatalysis",
+    "authors": "Shao, D., Wu, T., Li, X., Ren, X., & Xu, Z.",
+    "journal": "Small Science",
+    "doi": "10.1002/smsc.202300065",
+    "link": "https://doi.org/10.1002/smsc.202300065",
+    "image": "https://images.unsplash.com/photo-1501556466850-7c9ad1fccb4e?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2022",
+    "title": "Size Effects of Electrocatalysts: More Than a Variation of Surface Area",
+    "authors": "Wu, T., Han, M.-Y., & Xu, Z.",
+    "journal": "ACS Nano",
+    "doi": "10.1021/acsnano.2c03126",
+    "link": "https://doi.org/10.1021/acsnano.2c03126",
+    "image": "https://images.unsplash.com/photo-1628863012214-704afe2a61da?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Spin pinning effect to reconstructed oxyhydroxide layer on ferromagnetic oxides for enhanced water oxidation",
+    "authors": "Wu, T., Ren, X., Sun, Y., Sun, S., Xian, G., Scherer, G. G., Fisher, A. C., Mandler, D., Ager, J. W., Grimaud, A., Wang, J., Shen, C., Yang, H., Gracia, J., Gao, H.-J., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-021-23896-1",
+    "link": "https://doi.org/10.1038/s41467-021-23896-1",
+    "image": "https://images.unsplash.com/photo-1576086213369-97a306dca665?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Spin-polarized Oxygen Evolution Reaction under Magnetic Field",
+    "authors": "Ren, X., Wu, T., Sun, Y., Li, Y., Xian, G., Liu, X., Shen, C., Gracia, J., Gao, H.-J., Yang, H., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-021-22865-w",
+    "link": "https://doi.org/10.1038/s41467-021-22865-w",
+    "image": "https://images.unsplash.com/photo-1516339901600-2e3a82046d54?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Oxygen Evolution in Spin-sensitive Pathways",
+    "authors": "Wu, T., & Xu, Z.",
+    "journal": "Current Opinion in Electrochemistry",
+    "doi": "10.1016/j.coelec.2021.100804",
+    "link": "https://doi.org/10.1016/j.coelec.2021.100804",
+    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80",
+    "highlight": false
+  },
+  {
+    "year": "2019",
+    "title": "Iron-facilitated dynamic active-site generation on spinel CoAl2O4 with self-termination of surface reconstruction for water oxidation",
+    "authors": "Wu, T., Sun, S., Song, J., Xi, S., Du, Y., Chen, B., Sasangka, W. A., Liao, H., Gan, C. L., Scherer, G. G., Zeng, L., Wang, H., Li, H., Grimaud, A., & Xu, Z.",
+    "journal": "Nature Catalysis",
+    "doi": "10.1038/s41929-019-0325-0",
+    "link": "https://doi.org/10.1038/s41929-019-0325-0",
+    "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
+    "highlight": true
+  }
 ]
