@@ -179,7 +179,7 @@ async function loadPeople() {
             </div>
 
             <!-- PhD Students -->
-            <div>
+            <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">PhD Students</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     ${data.phd_students.map(s => `
@@ -191,6 +191,7 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+
 
             <!-- Master Students -->
             <div class="mb-20">
