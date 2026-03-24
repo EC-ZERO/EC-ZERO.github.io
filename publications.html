@@ -35,24 +35,34 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 glass-nav">
+   <!-- 1. Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 bg-brand rounded-lg flex items-center justify-center text-white">
-                        <i class="fas fa-atom text-xl"></i>
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img 
+                            src="/images/assets/ec-zero-logo-transperant-1A4FA2-blue.svg" 
+                            class="w-full h-full object-contain transform scale-125" 
+                            alt="EC-Zero Logo"
+                        >
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-brand-dark hidden sm:block">XXX Electrocatalysis Group</span>
+                    <span class="font-bold text-2xl tracking-tight text-brand-dark leading-none">
+                        EC-<span class="text-indigo-600 font-mono">ZER0</span> Lab
+                    </span>
                 </div>
+                
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html#home" class="text-gray-700 hover:text-brand font-medium transition-colors">Home</a>
-                    <a href="news.html" class="text-gray-700 hover:text-brand font-medium transition-colors">News</a>
+                    <!-- <a href="news.html" class="text-gray-700 hover:text-brand font-medium transition-colors">News</a> -->
                     <a href="index.html#research" class="text-gray-700 hover:text-brand font-medium transition-colors">Research</a>
                     <a href="people.html" class="text-gray-700 hover:text-brand font-medium transition-colors">People</a>
-                    <a href="publications.html" class="text-brand font-bold transition-colors">Publications</a>
+                    <a href="publications.html" class="text-gray-700 hover:text-brand font-medium transition-colors">Publications</a>
                     <a href="index.html#opportunities" class="text-gray-700 hover:text-brand font-medium transition-colors">Opportunities</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-700 hover:text-brand focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -60,13 +70,15 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 animate-fade-in-down">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="index.html#home" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Home</a>
-                <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">News</a>
+                <!-- <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">News</a> -->
                 <a href="index.html#research" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Research</a>
                 <a href="people.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">People</a>
-                <a href="publications.html" class="block px-3 py-2 text-brand bg-gray-50 rounded-md font-bold">Publications</a>
+                <a href="publications.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Publications</a>
                 <a href="index.html#opportunities" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Opportunities</a>
             </div>
         </div>
@@ -97,34 +109,73 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 bg-brand rounded-lg flex items-center justify-center text-white">
-                            <i class="fas fa-atom text-xl"></i>
+    <!-- 8. Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white">
+                                <div class="w-14 h-14 flex items-center justify-center">
+                                    <img 
+                                        src="/images/assets/ec-zero-logo-transperant-FFFFFF-white.svg" 
+                                        class="w-full h-full object-contain transform scale-125" 
+                                        alt="EC-Zero Logo"
+                                    >
+                                </div>
+                            </div>
+                            <span class="font-bold text-2xl tracking-tight text-white">
+                                EC-<span class="text-indigo-400 font-mono">ZER0</span> Lab
+                            </span>
                         </div>
-                        <span class="font-bold text-2xl tracking-tight text-white">XXX Electrocatalysis Group</span>
+                        <p class="max-w-md mb-6 leading-relaxed italic text-gray-400">
+                            The Global Institute of Future Technology, </br> Shanghai Jiao Tong University.
+                        </p>
+                        <!-- <div class="flex gap-5 text-xl">
+                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="hover:text-white transition-colors"><i class="fas fa-graduation-cap"></i></a>
+                        </div> -->
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Information</h4>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-map-marker-alt mt-1 text-brand"></i>
+                                <span>Room XXX, </br>The Global Institute of Future Technology,<br>Shanghai Jiao Tong University, Shanghai, China 200240</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-brand"></i>
+                                <span>ec-zero@sjtu.edu.cn</span> 
+                            </li>
+                            <!-- <li class="flex items-center gap-3">
+                                <i class="fas fa-phone text-brand"></i>
+                                <span>+86 (000) 1234-5678</span>
+                            </li> -->
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
+                            <!-- <li><a href="news.html" class="hover:text-white transition-colors">News</a></li> -->
+                            <li><a href="index.html#research" class="hover:text-white transition-colors">Research</a></li>
+                            <li><a href="people.html" class="hover:text-white transition-colors">People</a></li>
+                            <li><a href="publications.html" class="hover:text-white transition-colors">Publications</a></li>
+                            <li><a href="index.html#opportunities" class="hover:text-white transition-colors">Opportunities</a></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div>
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="news.html" class="hover:text-white transition-colors">News</a></li>
-                        <li><a href="people.html" class="hover:text-white transition-colors">People</a></li>
-                        <li><a href="publications.html" class="hover:text-white transition-colors text-white font-bold">Publications</a></li>
-                    </ul>
+                <div class="pt-8 border-t border-gray-800 text-center text-sm">
+                    <p>Copyright &copy; 2026 EC-ZERO Lab. All rights reserved.</p>
+                    <!-- <p class="mt-2 text-gray-600">Designed for Academic Excellence.</p> -->
                 </div>
             </div>
-            <div class="pt-8 border-t border-gray-800 text-center text-sm">
-                <p>Copyright &copy; 2026 XXX Electrocatalysis Group. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
