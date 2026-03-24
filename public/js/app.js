@@ -136,6 +136,8 @@ async function loadPeople() {
                     </ul>
                     <div class="flex gap-4">
                         <a href="${data.pi.google_scholar}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Google Scholar</a>
+                        <a href="${data.pi.scopus}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Scopus</a>
+                        <a href="${data.pi.orcid}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">ORCID</a>
                     </div>
                 </div>
             </div>
