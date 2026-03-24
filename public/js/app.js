@@ -130,13 +130,18 @@ async function loadPeople() {
                     <h3 class="text-3xl font-bold text-gray-900 mb-2">${data.pi.name}</h3>
                     <p class="text-brand font-semibold text-lg mb-6">${data.pi.title}</p>
                     <p class="text-gray-600 leading-relaxed mb-8">${data.pi.bio}</p>
+                    <p class="text-brand font-semibold text-lg mb-6">Awards </p>
+                    <ul class="list-disc list-inside text-gray-600 leading-relaxed mb-8">
+                        ${data.pi.awards.map(award => `<li>${award}</li>`).join('')}
+                    </ul>
                     <div class="flex gap-4">
-                        <a href="${data.pi.google_scholar}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Scholar</a>
+                        <a href="${data.pi.google_scholar}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Google Scholar</a>
                     </div>
                 </div>
             </div>
 
             <!-- Teachers  -->
+            <!-- 
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Teachers</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -149,8 +154,10 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+            -->
 
             <!-- Engineers -->
+            <!-- 
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Engineers</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -163,8 +170,10 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+            -->
 
             <!-- Postdocs -->
+            <!--
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Postdoctoral Fellows</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -177,8 +186,10 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+            -->
 
             <!-- PhD Students -->
+            <!--
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">PhD Students</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -191,9 +202,10 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
-
+            -->
 
             <!-- Master Students -->
+            <!--
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Master Students</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -206,8 +218,10 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+            -->
 
             <!-- Undergraduate Students -->
+            <!--
             <div class="mb-20">
                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Undergraduate Students</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -220,6 +234,7 @@ async function loadPeople() {
                     `).join('')}
                 </div>
             </div>
+            -->
             
         `;
         container.innerHTML = html;
