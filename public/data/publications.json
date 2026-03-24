@@ -6,7 +6,7 @@
     "journal": "Nature Sustainability",
     "doi": "10.1038/s41893-026-01772-4",
     "link": "https://doi.org/10.1038/s41893-026-01772-4",
-    "image": "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_sustainability.webp",
     "highlight": true
   },
   {
@@ -26,7 +26,7 @@
     "journal": "Nature Energy",
     "doi": "10.1038/s41560-025-01234-x",
     "link": "https://doi.org/10.1038/s41560-025-01234-x",
-    "image": "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_energy.webp",
     "highlight": true
   },
   {
@@ -57,7 +57,7 @@
     "doi": "10.1073/pnas.2318652121",
     "link": "https://doi.org/10.1073/pnas.2318652121",
     "image": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=800&q=80",
-    "highlight": true
+    "highlight": false
   },
   {
     "year": "2024",
@@ -146,7 +146,7 @@
     "journal": "Nature Catalysis",
     "doi": "10.1038/s41929-019-0325-0",
     "link": "https://doi.org/10.1038/s41929-019-0325-0",
-    "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
+    "image": "/images/publications/nature_catalysis.webp",
     "highlight": true
   }
 ]
