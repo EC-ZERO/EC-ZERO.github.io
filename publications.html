@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | Electrocatalysis Research Group</title>
+    <title>Publications | EC-ZERO Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,174 +18,68 @@
                             dark: '#1e3a8a',
                         }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style>
         .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
+        /* 💡 核心显隐逻辑 */
+        .lang-zh-content { display: none; }
+        [lang="zh"] .lang-zh-content { display: block; }
+        [lang="zh"] .lang-en-content { display: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-   <!-- 1. Navbar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-4">
-                    <div class="w-14 h-14 flex items-center justify-center">
-                        <img 
-                            src="/images/assets/ec-zero-logo-transperant-1A4FA2-blue.svg" 
-                            class="w-full h-full object-contain transform scale-125" 
-                            alt="EC-Zero Logo"
-                        >
-                    </div>
-                    <span class="font-bold text-2xl tracking-tight text-brand-dark leading-none">
-                        EC-<span class="text-indigo-600 font-mono">ZER0</span> Lab
-                    </span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html#home" class="text-gray-700 hover:text-brand font-medium transition-colors">Home</a>
-                    <!-- <a href="news.html" class="text-gray-700 hover:text-brand font-medium transition-colors">News</a> -->
-                    <a href="index.html#research" class="text-gray-700 hover:text-brand font-medium transition-colors">Research</a>
-                    <a href="people.html" class="text-gray-700 hover:text-brand font-medium transition-colors">People</a>
-                    <a href="publications.html" class="text-gray-700 hover:text-brand font-medium transition-colors">Publications</a>
-                    <a href="index.html#opportunities" class="text-gray-700 hover:text-brand font-medium transition-colors">Opportunities</a>
-                </div>
+    <div id="navbar-placeholder" style="min-height: 80px;"></div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 animate-fade-in-down">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html#home" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Home</a>
-                <!-- <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">News</a> -->
-                <a href="index.html#research" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Research</a>
-                <a href="people.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">People</a>
-                <a href="publications.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Publications</a>
-                <a href="index.html#opportunities" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">Opportunities</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header -->
     <header class="pt-40 pb-20 bg-brand-dark text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-extrabold mb-4">Publications</h1>
-            <p class="text-xl text-blue-100 max-w-2xl mx-auto">A comprehensive list of our group's research output in leading scientific journals.</p>
+            <div class="lang-en-content">
+                <h1 class="text-5xl font-extrabold mb-4">Publications</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    A comprehensive list of our group's research output in leading scientific journals.
+                </p>
+            </div>
+            <div class="lang-zh-content">
+                <h1 class="text-5xl font-extrabold mb-4">学术成果</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    我们在国际顶尖学术期刊上发表的研究成果全清单。
+                </p>
+            </div>
         </div>
     </header>
 
-    <!-- Publications Content -->
     <main class="py-24 bg-white min-h-screen">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="publications-container" class="prose prose-blue max-w-none space-y-12">
-                <!-- Publications will be loaded here from data/publications.md -->
                 <div class="animate-pulse space-y-8">
                     <div class="h-8 bg-gray-200 rounded w-1/4"></div>
                     <div class="space-y-4">
                         <div class="h-6 bg-gray-100 rounded w-3/4"></div>
                         <div class="h-4 bg-gray-100 rounded w-1/2"></div>
-                        <div class="h-4 bg-gray-100 rounded w-1/4"></div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- 8. Footer -->
-        <footer class="bg-gray-900 text-gray-400 py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                    <div class="col-span-1 md:col-span-2">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white">
-                                <div class="w-14 h-14 flex items-center justify-center">
-                                    <img 
-                                        src="/images/assets/ec-zero-logo-transperant-FFFFFF-white.svg" 
-                                        class="w-full h-full object-contain transform scale-125" 
-                                        alt="EC-Zero Logo"
-                                    >
-                                </div>
-                            </div>
-                            <span class="font-bold text-2xl tracking-tight text-white">
-                                EC-<span class="text-indigo-400 font-mono">ZER0</span> Lab
-                            </span>
-                        </div>
-                        <p class="max-w-md mb-6 leading-relaxed italic text-gray-400">
-                            The Global Institute of Future Technology, </br> Shanghai Jiao Tong University.
-                        </p>
-                        <!-- <div class="flex gap-5 text-xl">
-                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
-                            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="hover:text-white transition-colors"><i class="fas fa-graduation-cap"></i></a>
-                        </div> -->
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Information</h4>
-                        <ul class="space-y-4 text-sm">
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-map-marker-alt mt-1 text-brand"></i>
-                                <span>Room XXX, </br>The Global Institute of Future Technology,<br>Shanghai Jiao Tong University, Shanghai, China 200240</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fas fa-envelope text-brand"></i>
-                                <span style="unicode-bidi: bidi-override; direction: rtl;">
-                                    nc.ude.utjs@orez-ce
-                                </span>
-                            </li>
-                            <!-- <li class="flex items-center gap-3">
-                                <i class="fas fa-phone text-brand"></i>
-                                <span>+86 (000) 1234-5678</span>
-                            </li> -->
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
-                            <!-- <li><a href="news.html" class="hover:text-white transition-colors">News</a></li> -->
-                            <li><a href="index.html#research" class="hover:text-white transition-colors">Research</a></li>
-                            <li><a href="people.html" class="hover:text-white transition-colors">People</a></li>
-                            <li><a href="publications.html" class="hover:text-white transition-colors">Publications</a></li>
-                            <li><a href="index.html#opportunities" class="hover:text-white transition-colors">Opportunities</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="pt-8 border-t border-gray-800 text-center text-sm">
-                    <p>Copyright &copy; 2026 EC-ZERO Lab. All rights reserved.</p>
-                    <!-- <p class="mt-2 text-gray-600">Designed for Academic Excellence.</p> -->
-                </div>
-            </div>
-        </footer>
+    <div id="footer-placeholder"></div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="/js/app.js"></script>
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        // 页面启动逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            // 设定 HTML 语言戳
+            const lang = localStorage.getItem('lab_lang') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+        });
     </script>
 </body>
 </html>

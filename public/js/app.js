@@ -2,18 +2,38 @@
  * Electrocatalysis Group - Content Loading Engine
  */
 
-console.log("App.js loaded and running...");
+let currentLang = localStorage.getItem('lab_lang') || 'en';
+document.documentElement.setAttribute('lang', currentLang);
 
-// 1. Helper to fetch content
+// 定义一个简单的翻译小工具
+const t = (en, zh) => (currentLang === 'zh' ? zh : en);
+
+/**
+ * 核心：语言切换函数 (兼容你可能写的两个名字)
+ */
+window.handleToggleLanguage = window.switchLanguage = function(lang) {
+    // 如果传了 lang 就用传的，没传就自动反转
+    const targetLang = typeof lang === 'string' ? lang : (currentLang === 'en' ? 'zh' : 'en');
+    console.log("Switching language to:", targetLang);
+    localStorage.setItem('lab_lang', targetLang);
+    window.location.reload();
+};
+
+// 1. Helper to fetch content (保留了你优秀的 404 拦截逻辑)
 async function fetchContent(url) {
     try {
-        console.log(`Fetching: ${url}`);
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Failed to load ${url} (Status: ${response.status})`);
+        let targetUrl = url;
+        if (currentLang === 'zh' && !url.includes('_cn')) {
+            targetUrl = url.replace(/\.(json|html)$/, '_cn.$1');
+        }
+        
+        const response = await fetch(targetUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}: 找不到 ${targetUrl}`);
+
         const text = await response.text();
-        // Check if we accidentally got index.html (common in SPA fallback)
-        if (text.trim().startsWith('<!DOCTYPE html>')) {
-            throw new Error(`Fetched HTML instead of data for ${url}. Check file location.`);
+
+        if (url.endsWith('.json') && text.trim().startsWith('<!DOCTYPE html>')) {
+            throw new Error(`JSON 路径配置错误：抓到了 index.html 的回退。检查: ${targetUrl}`);
         }
         return text;
     } catch (err) {
@@ -22,7 +42,41 @@ async function fetchContent(url) {
     }
 }
 
-// 2. Load Research & Opportunities (HTML Snippets)
+// 1*. Load Navbar and Footer
+async function loadSharedComponents() {
+    const navContainer = document.getElementById('navbar-placeholder');
+    if (navContainer) {
+        // 直接请求基础路径，fetchContent 会自动处理后缀
+        const html = await fetchContent('/content/navbar.html');
+        if (html) {
+            navContainer.innerHTML = html;
+            
+            // 💡 关键：内容加载后，立刻更新切换按钮的文案
+            const toggleText = document.getElementById('lang-toggle-text');
+            if (toggleText) {
+                toggleText.innerText = currentLang === 'en' ? '中文' : 'English';
+            }
+            
+            initMobileMenu(); 
+        }
+    }
+
+    const footerContainer = document.getElementById('footer-placeholder');
+    if (footerContainer) {
+        const html = await fetchContent('/content/footer.html');
+        if (html) footerContainer.innerHTML = html;
+    }
+}
+
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+        btn.onclick = () => menu.classList.toggle('hidden');
+    }
+}
+
+// 2. Load Research & Opportunities
 async function loadHtmlSnippets() {
     const researchContainer = document.getElementById('research-content');
     if (researchContainer) {
@@ -83,7 +137,7 @@ async function loadPublications(limit = null) {
             <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="w-full md:w-48 h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50">
-                        <img src="${pub.image}" alt="Publication highlight" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" referrerpolicy="no-referrer">
+                        <img src="${pub.image}" alt="${t('Publication highlight', '论文亮点')}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" referrerpolicy="no-referrer">
                     </div>
                     <div class="flex-grow">
                         <div class="flex items-center gap-3 mb-3">
@@ -96,7 +150,7 @@ async function loadPublications(limit = null) {
                         <p class="text-gray-600 text-sm mb-4 font-medium">${pub.authors}</p>
                         <div class="flex gap-4">
                             <a href="${pub.link}" target="_blank" class="text-sm font-bold text-brand hover:underline flex items-center gap-1">
-                                <i class="fas fa-external-link-alt text-xs"></i> View Online
+                                <i class="fas fa-external-link-alt text-xs"></i> ${t('View Online', '在线阅读')}
                             </a>
                             <span class="text-gray-300">|</span>
                             <span class="text-sm text-gray-400 font-mono">DOI: ${pub.doi}</span>
@@ -115,13 +169,15 @@ async function loadPeople() {
     const container = document.getElementById('people-page-container');
     if (!container) return;
 
+    // 1. fetchContent 会自动根据当前语言决定拿 people.json 还是 people_cn.json
     const jsonText = await fetchContent('/data/people.json');
     if (!jsonText) return;
     
     try {
         const data = JSON.parse(jsonText);
+        
+        // --- A. 渲染 PI (导师) 部分 ---
         let html = `
-            <!-- PI Section -->
             <div class="max-w-5xl mx-auto bg-gray-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 border border-gray-100 mb-24">
                 <div class="w-64 h-64 flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl">
                     <img src="${data.pi.photo}" alt="${data.pi.name}" class="w-full h-full object-cover">
@@ -130,139 +186,94 @@ async function loadPeople() {
                     <h3 class="text-3xl font-bold text-gray-900 mb-2">${data.pi.name}</h3>
                     <p class="text-brand font-semibold text-lg mb-6">${data.pi.title}</p>
                     <p class="text-gray-600 leading-relaxed mb-8">${data.pi.bio}</p>
-                    <p class="text-brand font-semibold text-lg mb-6">Awards </p>
+                    <p class="text-brand font-semibold text-lg mb-6">${currentLang === 'zh' ? '荣誉奖项' : 'Awards'}</p>
                     <ul class="list-disc list-inside text-gray-600 leading-relaxed mb-8">
                         ${data.pi.awards.map(award => `<li>${award}</li>`).join('')}
                     </ul>
                     <div class="flex gap-4">
-                        <a href="${data.pi.google_scholar}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Google Scholar</a>
-                        <a href="${data.pi.scopus}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">Scopus</a>
-                        <a href="${data.pi.orcid}" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors">ORCID</a>
+                        <a href="${data.pi.google_scholar}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">${t('Google Scholar', '谷歌学术')}</a>
+                        <a href="${data.pi.scopus}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">Scopus</a>
+                        <a href="${data.pi.orcid}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">ORCID</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Teachers  -->
-            <!-- 
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Teachers</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.teachers.map(t => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${t.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${t.name}</h4>
-                            <p class="text-sm text-gray-500">${t.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-
-            <!-- Engineers -->
-            <!-- 
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Engineers</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.engineers.map(e => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${e.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${e.name}</h4>
-                            <p class="text-sm text-gray-500">${e.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-
-            <!-- Postdocs -->
-            <!--
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Postdoctoral Fellows</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.postdocs.map(p => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${p.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${p.name}</h4>
-                            <p class="text-sm text-gray-500">${p.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-
-            <!-- PhD Students -->
-            <!--
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">PhD Students</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.phd_students.map(s => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${s.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${s.name}</h4>
-                            <p class="text-sm text-gray-500">${s.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-
-            <!-- Master Students -->
-            <!--
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Master Students</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.master_students.map(m => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${m.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${m.name}</h4>
-                            <p class="text-sm text-gray-500">${m.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-
-            <!-- Undergraduate Students -->
-            <!--
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">Undergraduate Students</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${data.undergraduate_students.map(u => `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
-                            <img src="${u.photo}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                            <h4 class="font-bold text-gray-900">${u.name}</h4>
-                            <p class="text-sm text-gray-500">${u.details}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-            -->
-            
         `;
+
+        // --- B. 自动化渲染其他成员分类 ---
+        // 定义顺序和对应的中英文标题 [JSON里的key, 英文名, 中文名]
+        // const groupConfigs = [
+        //     ['teachers', 'Teachers', '指导教师'],
+        //     ['engineers', 'Engineers', '工程师'],
+        //     ['postdocs', 'Postdoctoral Fellows', '博士后'],
+        //     ['phd_students', 'PhD Students', '博士研究生'],
+        //     ['master_students', 'Master Students', '硕士研究生'],
+        //     ['undergraduate_students', 'Undergraduate Students', '本科生']
+        // ];
+
+        // groupConfigs.forEach(([key, enTitle, zhTitle]) => {
+        //     const members = data[key];
+        //     // 💡 只有当这个分类有人的时候才渲染标题和容器
+        //     if (members && members.length > 0) {
+        //         html += `
+        //             <div class="mb-20">
+        //                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">
+        //                     ${currentLang === 'zh' ? zhTitle : enTitle}
+        //                 </h3>
+        //                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        //                     ${members.map(person => `
+        //                         <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow group">
+        //                             <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gray-50 group-hover:border-brand transition-colors">
+        //                                 <img src="${person.photo || '/images/people/default.jpg'}" 
+        //                                      class="w-full h-full object-cover" 
+        //                                      alt="${person.name}">
+        //                             </div>
+        //                             <h4 class="font-bold text-gray-900 mb-1">${person.name}</h4>
+        //                             <p class="text-sm text-gray-500">${person.details || ''}</p>
+        //                         </div>
+        //                     `).join('')}
+        //                 </div>
+        //             </div>
+        //         `;
+        //     }
+        // });
+
         container.innerHTML = html;
     } catch (e) {
-        console.error("JSON parsing error:", e);
+        console.error("People JSON parsing error:", e);
     }
 }
 
-// Initialize based on page
+// 入口初始化
+// app.js 里的入口初始化
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM Content Loaded. Initializing content...");
-    loadHtmlSnippets();
+    console.log("EC-ZERO Engine Starting (Optimized)...");
     
-    // Check which page we are on
+    // 1. 立即获取路径，决定我们要点什么“菜”
     const path = window.location.pathname;
-    console.log(`Current path: ${path}`);
-    
+    const tasks = [];
+
+    // 2. 无论哪个页面，都要加载导航栏和页脚 (共享组件)
+    tasks.push(loadSharedComponents());
+
+    // 3. 根据路由，并行添加特定页面的加载任务
     if (path.includes('news.html')) {
-        loadNews();
+        tasks.push(loadNews());
     } else if (path.includes('people.html')) {
-        loadPeople();
+        tasks.push(loadPeople());
     } else if (path.includes('publications.html')) {
-        loadPublications();
+        tasks.push(loadPublications());
     } else {
-        // Index page or root
-        loadNews(3); // Show 3 news items
-        loadPublications(2); // Show 2 publications
+        // 首页逻辑：只有在首页才加载这些 HTML 片段
+        tasks.push(loadHtmlSnippets()); 
+        tasks.push(loadNews(3));
+        tasks.push(loadPublications(2));
     }
+
+    // 4. 【核心优化】并发执行所有任务，不使用 await 阻塞
+    // 浏览器会同时发出这 3-5 个请求，谁先回来谁先渲染
+    Promise.all(tasks).then(() => {
+        console.log("🚀 All content loaded in parallel!");
+    }).catch(err => {
+        console.error("Critical loading error:", err);
+    });
 });

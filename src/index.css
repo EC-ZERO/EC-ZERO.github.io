@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+/* 确保导航栏有背景，且层级最高 */
+.glass-nav {
+    background-color: rgba(255, 255, 255, 0.98) !important; /* 调高一点点，更白一点 */
+    backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000 !important; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* 防止内容被固定导航栏遮挡，给所有页面的 body 加个 padding */
+body {
+    padding-top: 0; /* 基础重置 */
+}
+
+/* 显隐逻辑 */
+.lang-zh-content { display: none !important; }
+.lang-en-content { display: block !important; }
+[lang="zh"] .lang-zh-content { display: block !important; }
+[lang="zh"] .lang-en-content { display: none !important; }
+
+/* 确保 Navbar 的层级够高
+#navbar { z-index: 9999; } */
