@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* 暴力全局覆盖，不给浏览器任何变粗的机会 */
+* {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
 /* 确保导航栏有背景，且层级最高 */
 .glass-nav {
     background-color: rgba(255, 255, 255, 0.98) !important; /* 调高一点点，更白一点 */
