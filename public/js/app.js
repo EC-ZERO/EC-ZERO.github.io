@@ -131,7 +131,10 @@ async function loadPublications(limit = null) {
 
     try {
         const pubData = JSON.parse(jsonText);
-        const displayData = limit ? pubData.filter(p => p.highlight).slice(0, limit) : pubData;
+        // 先过滤出所有标记为 highlight 的文章
+        const allHighlights = pubData.filter(p => p.highlight);
+        // 如果传了 limit (如 4) 就切片；如果没传 limit，就显示所有 highlight
+        const displayData = limit ? allHighlights.slice(0, limit) : allHighlights;
 
         container.innerHTML = displayData.map(pub => `
             <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group">
@@ -266,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 首页逻辑：只有在首页才加载这些 HTML 片段
         tasks.push(loadHtmlSnippets()); 
         tasks.push(loadNews(3));
-        tasks.push(loadPublications(4));
+        tasks.push(loadPublications());
     }
 
     // 4. 【核心优化】并发执行所有任务，不使用 await 阻塞
