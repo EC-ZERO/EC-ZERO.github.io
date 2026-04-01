@@ -19,6 +19,13 @@
     "orcid": "https://orcid.org/0000-0001-7123-6844",
     "linkedin": "#"
   },
+    "lead_architect": {
+    "name": "Mr. Kevin ZHAO Weiming",
+    "title": "Cheif AI Architect",
+    "bio": "Mr Kevin ZHAO Weiming is the Chief AI Architect at the EC-ZERO Lab in the Global Institute of Future Technology, Shanghai Jiao Tong University. He specializes in integrating AI, XR, and Human-Computer Interaction (HCI) into engineering practices. Previously, he served as the Director of the Extended Reality Lab at the SJTU Student Innovation Center and as a Research Associate at the Energy Research Institute @ NTU (ERI@N) in Singapore. He holds an MSc in Digital Media Technology from Nanyang Technological University (NTU) and a BSc from Northwest University. His current work focuses on Generative AI (AIGC) and its innovative applications in engineering.",
+    "photo": "/images/assets/people/ai_architect/kevin_zhao_avatar.webp",
+    "linkedin": "#"
+  },
   "teachers": [
     {
       "name": "Dr. Jane Doe",
