@@ -144,9 +144,14 @@ async function loadPublications(limit = null) {
                             <span class="px-3 py-1 bg-blue-50 text-brand text-xs font-bold rounded-md uppercase tracking-wider">${pub.year}</span>
                             <span class="text-gray-400 text-sm font-medium italic">${pub.journal}</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand transition-colors leading-tight">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-brand transition-colors leading-tight">
                             <a href="${pub.link}" target="_blank">${pub.title}</a>
                         </h3>
+                        ${pub.title_cn ? `
+                        <p class="text-gray-400 text-sm mb-3 font-medium leading-snug">
+                            ${pub.title_cn}
+                        </p>
+                        ` : '<div class="mb-3"></div>'} 
                         <p class="text-gray-600 text-sm mb-4 font-medium">${pub.authors}</p>
                         <div class="flex gap-4">
                             <a href="${pub.link}" target="_blank" class="text-sm font-bold text-brand hover:underline flex items-center gap-1">
