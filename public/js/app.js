@@ -122,9 +122,62 @@ async function loadNews(limit = null) {
 }
 
 // 4. Load Publications (JSON)
+// async function loadPublications(limit = null) {
+//     const container = document.getElementById('publications-container');
+//     if (!container) return;
+
+//     const jsonText = await fetchContent('/data/publications.json');
+//     if (!jsonText) return;
+
+//     try {
+//         const pubData = JSON.parse(jsonText);
+//         const displayData = limit ? pubData.filter(p => p.highlight).slice(0, limit) : pubData;
+
+//         container.innerHTML = displayData.map(pub => `
+//             <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group">
+//                 <div class="flex flex-col md:flex-row gap-8">
+//                     <div class="w-full md:w-48 h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50">
+//                         <img src="${pub.image}" alt="${t('Publication highlight', '论文亮点')}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" referrerpolicy="no-referrer">
+//                     </div>
+//                     <div class="flex-grow">
+//                         <div class="flex items-center gap-3 mb-3">
+//                             <span class="px-3 py-1 bg-blue-50 text-brand text-xs font-bold rounded-md uppercase tracking-wider">${pub.year}</span>
+//                             <span class="text-gray-400 text-sm font-medium italic">${pub.journal}</span>
+//                         </div>
+//                         <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-brand transition-colors leading-tight">
+//                             <a href="${pub.link}" target="_blank">${pub.title}</a>
+//                         </h3>
+//                         ${pub.title_cn ? `
+//                         <p class="text-gray-400 text-sm mb-3 font-medium leading-snug">
+//                             ${pub.title_cn}
+//                         </p>
+//                         ` : '<div class="mb-3"></div>'} 
+//                         <p class="text-gray-600 text-sm mb-4 font-medium">${pub.authors}</p>
+//                         <div class="flex gap-4">
+//                             <a href="${pub.link}" target="_blank" class="text-sm font-bold text-brand hover:underline flex items-center gap-1">
+//                                 <i class="fas fa-external-link-alt text-xs"></i> ${t('View Online', '在线阅读')}
+//                             </a>
+//                             <span class="text-gray-300">|</span>
+//                             <span class="text-sm text-gray-400 font-mono">DOI: ${pub.doi}</span>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         `).join('');
+//     } catch (e) {
+//         console.error("Publications JSON parsing error:", e);
+//     }
+// }
+
 async function loadPublications(limit = null) {
     const container = document.getElementById('publications-container');
     if (!container) return;
+
+    // --- 1. 定义实验室成员名单 (请根据实际情况补充) ---
+    const labMembers = [
+        "Wu, T."
+        //""
+    ];
 
     const jsonText = await fetchContent('/data/publications.json');
     if (!jsonText) return;
@@ -133,7 +186,16 @@ async function loadPublications(limit = null) {
         const pubData = JSON.parse(jsonText);
         const displayData = limit ? pubData.filter(p => p.highlight).slice(0, limit) : pubData;
 
-        container.innerHTML = displayData.map(pub => `
+        container.innerHTML = displayData.map(pub => {
+            // --- 2. 这里的逻辑用于处理作者字符串 ---
+            let highlightedAuthors = pub.authors;
+            labMembers.forEach(member => {
+                // 使用正则表达式全局替换，并保留原样
+                const regex = new RegExp(`(${member})`, 'g');
+                highlightedAuthors = highlightedAuthors.replace(regex, '<strong>$1</strong>');
+            });
+
+            return `
             <div class="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="w-full md:w-48 h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50">
@@ -152,7 +214,7 @@ async function loadPublications(limit = null) {
                             ${pub.title_cn}
                         </p>
                         ` : '<div class="mb-3"></div>'} 
-                        <p class="text-gray-600 text-sm mb-4 font-medium">${pub.authors}</p>
+                        <p class="text-gray-600 text-sm mb-4 font-medium">${highlightedAuthors}</p>
                         <div class="flex gap-4">
                             <a href="${pub.link}" target="_blank" class="text-sm font-bold text-brand hover:underline flex items-center gap-1">
                                 <i class="fas fa-external-link-alt text-xs"></i> ${t('View Online', '在线阅读')}
@@ -163,11 +225,12 @@ async function loadPublications(limit = null) {
                     </div>
                 </div>
             </div>
-        `).join('');
+        `}).join(''); // 结束 map
     } catch (e) {
         console.error("Publications JSON parsing error:", e);
     }
 }
+
 
 // 5. Load People (JSON)
 async function loadPeople() {
