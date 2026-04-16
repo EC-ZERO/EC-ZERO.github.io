@@ -271,18 +271,34 @@ async function loadPeople() {
         // 增加安全检查：只有当 data.lead_architect 存在时才渲染
         // if (data.lead_architect && data.lead_architect.name) {
         //     html += `
-        //         <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 border border-gray-100 mb-24 shadow-sm">
-        //             <div class="w-48 h-48 flex-shrink-0 rounded-full overflow-hidden border-2 border-gray-100 shadow-lg">
+        //         <div class="max-w-5xl mx-auto bg-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-10 border border-gray-100 mb-20 shadow-sm">
+                    
+        //             <div class="w-56 h-56 flex-shrink-0 rounded-full overflow-hidden border-2 border-gray-50 shadow-md">
         //                 <img src="${data.lead_architect.photo || '/images/people/default.jpg'}" 
-        //                      alt="${data.lead_architect.name}" 
-        //                      class="w-full h-full object-cover">
+        //                     alt="${data.lead_architect.name}" 
+        //                     class="w-full h-full object-cover">
         //             </div>
+
         //             <div class="flex-1 text-center md:text-left">
-        //                 <h3 class="text-2xl font-bold text-gray-900 mb-1">${data.lead_architect.name}</h3>
-        //                 <p class="text-brand font-medium mb-3">${data.lead_architect.title}</p>
-        //                 <p class="text-gray-600 text-sm leading-relaxed mb-4">${data.lead_architect.bio || ''}</p>
-        //                 <div class="flex justify-center md:justify-start gap-3">
-        //                      ${data.lead_architect.linkedin ? `<a href="${data.lead_architect.linkedin}" target="_blank" class="text-gray-400 hover:text-brand transition-colors"><i class="fab fa-linkedin text-xl"></i></a>` : ''}
+        //                 <h3 class="text-2xl font-bold text-gray-900 mb-2">${data.lead_architect.name}</h3>
+        //                 <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
+        //                 <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
+                        
+        //                 <div class="flex justify-center md:justify-start flex-wrap gap-3">
+        //                     ${data.lead_architect.website ? `
+        //                         <a href="${data.lead_architect.website}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+        //                             <i class="fas fa-globe"></i> ${currentLang === 'zh' ? '个人主页' : 'Website'}
+        //                         </a>` : ''}
+                            
+        //                     ${data.lead_architect.github ? `
+        //                         <a href="${data.lead_architect.github}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+        //                             <i class="fab fa-github"></i> GitHub
+        //                         </a>` : ''}
+                            
+        //                     ${data.lead_architect.google_scholar ? `
+        //                         <a href="${data.lead_architect.google_scholar}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+        //                             <i class="fas fa-graduation-cap"></i> ${currentLang === 'zh' ? '谷歌学术' : 'Google Scholar'}
+        //                         </a>` : ''}
         //                 </div>
         //             </div>
         //         </div>
@@ -311,14 +327,29 @@ async function loadPeople() {
         //                 </h3>
         //                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         //                     ${members.map(person => `
-        //                         <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow group">
-        //                             <div class="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gray-50 group-hover:border-brand transition-colors">
+        //                         <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-all group flex flex-col items-center">
+        //                             <div class="w-28 h-28 rounded-full mb-4 overflow-hidden border-2 border-gray-50 group-hover:border-brand transition-colors shadow-sm">
         //                                 <img src="${person.photo || '/images/people/default.jpg'}" 
-        //                                      class="w-full h-full object-cover" 
-        //                                      alt="${person.name}">
+        //                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+        //                                     alt="${person.name}">
         //                             </div>
-        //                             <h4 class="font-bold text-gray-900 mb-1">${person.name}</h4>
-        //                             <p class="text-sm text-gray-500">${person.details || ''}</p>
+                                    
+        //                             <h4 class="font-bold text-gray-900 mb-1 text-lg">${person.name}</h4>
+                                    
+        //                             <p class="text-gray-600 text-sm mb-3 leading-snug">${person.details || ''}</p>
+
+        //                             <div class="mt-auto flex gap-3 justify-center">
+        //                                 ${person.website ? `
+        //                                     <a href="${person.website}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="Personal Website">
+        //                                         <i class="fas fa-globe text-lg"></i>
+        //                                     </a>
+        //                                 ` : ''}
+        //                                 ${person.github ? `
+        //                                     <a href="${person.github}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="GitHub">
+        //                                         <i class="fab fa-github text-lg"></i>
+        //                                     </a>
+        //                                 ` : ''}
+        //                             </div>
         //                         </div>
         //                     `).join('')}
         //                 </div>

@@ -14,7 +14,7 @@
         "2022 - 国家优秀自费留学生奖学金",
         "2021 - 南洋理工大学博士研究卓越奖（金奖）"
       ],
-      "google_scholar": "https://scholar.google.com/citations?user=HjobtBAAAAAJ&hl=en",
+      "google_scholar": "https://scholar.google.com/citations?user=HjobtBAAAAAJ&hl=CN",
       "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57204686884",
       "orcid": "https://orcid.org/0000-0001-7123-6844",
       "linkedin": "#"
@@ -24,14 +24,19 @@
     "title": "首席AI架构师",
     "bio": "赵伟明先生现任上海交通大学溥渊未来技术学院 EC-ZERO 实验室首席 AI 架构师。他专注于人工智能 (AI)、扩展现实 (XR) 以及人机交互 (HCI) 技术与工程实践的深度融合，重点围绕生成式人工智能 (AIGC) 及其在工程领域的创新应用展开。在此之前，他曾担任上海交通大学学生创新中心扩展现实实验室主任，并曾任职于新加坡南洋理工大学 (NTU) 能源研究院 (ERI@N) 担任研究员。他拥有南洋理工大学数字媒体技术硕士学位及西北大学计算机科学与技术学士学位。",
     "photo": "/images/assets/people/ai_architect/kevin_zhao_avatar.webp",
-    "linkedin": "#"
+    "website": "https://zwm0426.github.io",
+    "github": "https://github.com/zwm0426",
+    "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=CN"
   },
   "teachers": [
     {
       "name": "珍豆 博士",
       "title": "Senior Research Scientist",
       "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "加州大学伯克利分校博士"
+      "details": "加州大学伯克利分校博士",
+      "website": "https://zwm0426.github.io",
+      "github": "https://github.com/zwm0426",
+      "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=CN"
     },
     {
       "name": "阿三 博士",
