@@ -1,0 +1,167 @@
+[
+  {
+    "year": "2026",
+    "title": "Electrolysis with Built-in Seawater Desalination by Porous-Solid-Electrolyte Reactor",
+    "title_cn": "利用多孔固体电解质反应器实现内置海水淡化的电解技术",
+    "authors": "Wu, T.*, Zhu, S., Zhang, Y., Lin, X., Liu, L., Ye, H., Wang, H., & Xu, Z.",
+    "journal": "Nature Sustainability",
+    "doi": "10.1038/s41893-026-01772-4",
+    "link": "https://doi.org/10.1038/s41893-026-01772-4",
+    "image": "/images/publications/nature_sustainability1.webp",
+    "highlight": true
+  },
+  {
+    "year": "2026",
+    "title": "Water Oxidation Promoted by Proximity-Induced Magnetism under Dzyaloshinskii–Moriya Interaction",
+    "title_cn": "Dzyaloshinskii-Moriya (D-M) 相互作用下邻近诱导磁性促进的水氧化反应",
+    "authors": "Ren, X., Tao, L., Wu, T., Sun, R., Zhao, X., Peng, X., Zhou, W., Ma, D., Du, S., & Xu, Z.",
+    "journal": "Journal of the American Chemical Society",
+    "doi": "10.1021/jacs.5c17778",
+    "link": "https://doi.org/10.1021/jacs.5c17778",
+    "image": "/images/publications/2_JACS_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2025",
+    "title": "Spin-related and non-spin-related effects of magnetic fields on water oxidation",
+    "title_cn": "磁场对水氧化反应的自旋相关与非自旋相关效应",
+    "authors": "Yu, A., Zhang, Y., Zhu, S., Wu, T.*, & Xu, Z.",
+    "journal": "Nature Energy",
+    "doi": "10.1038/s41560-025-01744-6",
+    "link": "https://doi.org/10.1038/s41560-025-01744-6",
+    "image": "/images/publications/nature_energy1.webp",
+    "highlight": true
+  },
+  {
+    "year": "2025",
+    "title": "Remote Iron dynamics of NiFe (oxy)hydroxides toward robust active sites in water oxidation",
+    "title_cn": "镍铁羟基氧化物中面向高稳定性水氧化活性位点的远程铁动力学",
+    "authors": "Zhao, J., Zhang, Y., Ye, Y., Xu, Q., Luo, S., Meng, F., Zhu, S., Li, X., Lin, X., Yu, A., Ren, X., Wu, T.*, & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-025-60728-y",
+    "link": "https://doi.org/10.1038/s41467-025-60728-y",
+    "image": "/images/publications/nature_comm.webp",
+    "highlight": false
+  },
+  {
+    "year": "2025",
+    "title": "Non-linear spin correlation to intermediates in enhanced electrochemical nitrate reduction under magnetic fields",
+    "title_cn": "磁场增强电化学硝酸盐还原中与中间体的非线性自旋相关性",
+    "authors": "Shao, D., Wu, Q., Zhang, Y., Cai, X., Arts, C., Zhu, S., Meng, F., Song, P., Li, X., Ren, X., Wu, T.*, & Xu, Z.",
+    "journal": "Energy & Environmental Science",
+    "doi": "10.1039/D5EE02132D",
+    "link": "https://doi.org/10.1039/D5EE02132D",
+    "image": "/images/publications/5_Energy_Environmental_Science_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2024",
+    "title": "Tailoring atomic chemistry to refine reaction pathway for the most enhancement by magnetization in water oxidation",
+    "title_cn": "调控原子化学以优化反应路径，实现磁化对水氧化的最大增益",
+    "authors": "Wu, T., Ge, J., Wu, Q., Ren, X., Meng, F., Wang, J., Xi, S., Wang, X., Elouarzaki, K., Fisher, A., & Xu, Z.",
+    "journal": "PNAS",
+    "doi": "10.1073/pnas.2318652121",
+    "link": "https://doi.org/10.1073/pnas.2318652121",
+    "image": "/images/publications/pnas_trimmed.webp",
+    "highlight": true
+  },
+  {
+    "year": "2024",
+    "title": "Opportunities and Challenges in Biomass Electrocatalysis and Valorization",
+    "title_cn": "生物质电催化与高值化利用的机遇与挑战",
+    "authors": "Sun, S., Liu, Z., Xu, Z., & Wu, T.*",
+    "journal": "Applied Catalysis B",
+    "doi": "10.1016/j.apcatb.2024.124404",
+    "link": "https://doi.org/10.1016/j.apcatb.2024.124404",
+    "image": "/images/publications/7_Applied_Catalysis_B_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "Reconstruction of Thiospinel to Active Sites and Spin Channels for Water Oxidation",
+    "title_cn": "硫代尖晶石重构为水氧化的活性位点与自旋通道",
+    "authors": "Wu, T., Sun, Y., Ren, X., Wang, J., Song, J., Pan, Y., Mu, Y., Zhang, J., Cheng, Q., Xian, G., Xi, S., C, Shen, C., Gao, H.-J., Fisher, A. C., Sherburne, M. P., Du, Y., Ager, J. W., Gracia, J., Yang, H., Zeng, L., & Xu, Z.",
+    "journal": "Advanced Materials",
+    "doi": "10.1002/adma.202207041",
+    "link": "https://doi.org/10.1002/adma.202207041",
+    "image": "/images/publications/8_Advanced_Materials_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "The origin of magnetization-caused increment in water oxidation",
+    "title_cn": "磁化引起水氧化活性增强的物理起源",
+    "authors": "Ren, X., Wu, T., Gong, Z., Pan, L., Meng, J., Yang, H., Dagbjartsdottir, F. B., Fisher, A., Gao, H.-J., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-023-38212-2",
+    "link": "https://doi.org/10.1038/s41467-023-38212-2",
+    "image": "/images/publications/nature_comm.webp",
+    "highlight": false
+  },
+  {
+    "year": "2023",
+    "title": "A perspective of magnetoelectric effect in electrocatalysis",
+    "title_cn": "电催化中磁电效应的展望",
+    "authors": "Shao, D., Wu, T., Li, X., Ren, X., & Xu, Z.",
+    "journal": "Small Science",
+    "doi": "10.1002/smsc.202300065",
+    "link": "https://doi.org/10.1002/smsc.202300065",
+    "image": "/images/publications/10_small_science_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2022",
+    "title": "Size Effects of Electrocatalysts: More Than a Variation of Surface Area",
+    "title_cn": "电催化剂的尺寸效应：不仅仅是表面积的变化",
+    "authors": "Wu, T., Han, M.-Y., & Xu, Z.",
+    "journal": "ACS Nano",
+    "doi": "10.1021/acsnano.2c04603",
+    "link": "https://doi.org/10.1021/acsnano.2c04603",
+    "image": "/images/publications/11_acs_nano_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Spin pinning effect to reconstructed oxyhydroxide layer on ferromagnetic oxides for enhanced water oxidation",
+    "title_cn": "铁磁性氧化物上重构羟基氧化物层的自旋钉扎效应用于增强水氧化",
+    "authors": "Wu, T., Ren, X., Sun, Y., Sun, S., Xian, G., Scherer, G. G., Fisher, A. C., Mandler, D., J, W. Ager, J. W., Grimaud, A., Wang, J., Shen, C., Yang, H., Gracia, J., Gao, H.-J., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-021-23896-1",
+    "link": "https://doi.org/10.1038/s41467-021-23896-1",
+    "image": "/images/publications/nature_comm.webp",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Spin-polarized Oxygen Evolution Reaction under Magnetic Field",
+    "title_cn": "磁场下的自旋极化析氧反应",
+    "authors": "Ren, X., Wu, T., Sun, Y., Li, Y., Xian, G., Liu, X., Shen, C., Gracia, J., Gao, H.-J., Yang, H., & Xu, Z.",
+    "journal": "Nature Communications",
+    "doi": "10.1038/s41467-021-22865-y",
+    "link": "https://doi.org/10.1038/s41467-021-22865-y",
+    "image": "/images/publications/nature_comm.webp",
+    "highlight": false
+  },
+  {
+    "year": "2021",
+    "title": "Oxygen Evolution in Spin-sensitive Pathways",
+    "title_cn": "自旋敏感路径中的析氧反应",
+    "authors": "Wu, T., & Xu, Z.",
+    "journal": "Current Opinion in Electrochemistry",
+    "doi": "10.1016/j.coelec.2021.100804",
+    "link": "https://doi.org/10.1016/j.coelec.2021.100804",
+    "image": "/images/publications/14_Current_Opinion_in_Electrochemistry_trimmed.webp",
+    "highlight": false
+  },
+  {
+    "year": "2019",
+    "title": "Iron-facilitated dynamic active-site generation on spinel CoAl<sub>2</sub>O<sub>4</sub> with self-termination of surface reconstruction for water oxidation",
+    "title_cn": "铁促进尖晶石 CoAl<sub>2</sub>O<sub>4</sub> 上动态活性位点的生成及水氧化表面重构的自终止",
+    "authors": "Wu, T., Sun, S., Song, J., Xi, S., Du, Y., Chen, B., Sasangka, W. A., Liao, H., Gan, C. L., Scherer, G. G., Zeng, L., Wang, H., Li, H., Grimaud, A., & Xu, Z.",
+    "journal": "Nature Catalysis",
+    "doi": "10.1038/s41929-019-0325-4",
+    "link": "https://doi.org/10.1038/s41929-019-0325-4",
+    "image": "/images/publications/nature_catalysis1.webp",
+    "highlight": true
+  }
+]

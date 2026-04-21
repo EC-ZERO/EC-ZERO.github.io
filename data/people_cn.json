@@ -1,0 +1,128 @@
+{
+  "lab_name": "EC-ZERO Lab",
+  "pi": {
+      "name": "邬天择 副教授",
+      "title": "首席研究员 | 副教授",
+      "photo": "/images/assets/people/pi/wutianze_square.webp",
+      "bio": "邬天择博士是上海交通大学溥渊未来技术学院的副教授。研究重点是电催化制氢和低碳可持续技术。于新加坡南洋理工大学（NTU）获得材料科学与工程博士学位，于东华大学获得材料科学与工程工学学士学位。在加入上海交通大学之前，于新加坡科研局（A*STAR）可持续发展研究院（ISCE2）担任科学家，随后在南洋理工大学材料科学与工程学院担任校长荣誉学者。",
+      "email": "～",
+      "awards": [
+        "2025 - 国家高层次青年人才",
+        "2025 - 上海市高层次青年人才",
+        "2023 - 新加坡工贸部青年学者研究基金",
+        "2022 - 南洋理工大学校长荣誉学者计划基金",
+        "2022 - 国家优秀自费留学生奖学金",
+        "2021 - 南洋理工大学博士研究卓越奖（金奖）"
+      ],
+      "google_scholar": "https://scholar.google.com/citations?user=HjobtBAAAAAJ&hl=CN",
+      "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57204686884",
+      "orcid": "https://orcid.org/0000-0001-7123-6844",
+      "linkedin": "#"
+    },
+    "lead_architect": {
+    "name": "赵伟明",
+    "title": "首席AI架构师",
+    "bio": "赵伟明先生现任上海交通大学溥渊未来技术学院 EC-ZERO 实验室首席 AI 架构师。他专注于人工智能 (AI)、扩展现实 (XR) 以及人机交互 (HCI) 技术与工程实践的深度融合，重点围绕生成式人工智能 (AIGC) 及其在工程领域的创新应用展开。在此之前，他曾担任上海交通大学学生创新中心扩展现实实验室主任，并曾任职于新加坡南洋理工大学 (NTU) 能源研究院 (ERI@N) 担任研究员。他拥有南洋理工大学数字媒体技术硕士学位及西北大学计算机科学与技术学士学位。",
+    "photo": "/images/assets/people/ai_architect/kevin_zhao_avatar.webp",
+    "website": "https://zwm0426.github.io",
+    "github": "https://github.com/zwm0426",
+    "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=CN"
+  },
+  "teachers": [
+    {
+      "name": "珍豆 博士",
+      "title": "Senior Research Scientist",
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "加州大学伯克利分校博士",
+      "website": "https://zwm0426.github.io",
+      "github": "https://github.com/zwm0426",
+      "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=CN"
+    },
+    {
+      "name": "阿三 博士",
+      "title": "Research Scientist",
+      "photo": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "PhD, University of Cambridge"
+    }
+  ],
+  "engineers": [
+    {
+      "name": "Emily Johnson",
+      "title": "Lab Engineer",
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "MSc, University of Texas"
+    },
+    {
+      "name": "Michael Brown",
+      "title": "Lab Technician",
+      "photo": "https://images.unsplash.com/photo-1531123897727-8e259fa380ee?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "BSc, University of Michigan"
+    }
+  ],
+  "postdocs": [
+    {
+      "name": "Dr. John Doe",
+      "title": "Postdoctoral Fellow",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "PhD, MIT"
+    },
+    {
+      "name": "Dr. Alan Smith",
+      "title": "Postdoctoral Fellow",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "PhD, Stanford"
+    }
+  ],
+  "phd_students": [
+    {
+      "name": "Jane Smith",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 4"
+    },
+    {
+      "name": "Sarah Wang",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 3"
+    },
+    {
+      "name": "David Lee",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 2"
+    },
+    {
+      "name": "Kevin Zhang",
+      "title": "PhD Student",
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 1"
+    }
+  ],
+  "master_students": [
+    {
+      "name": "Emily Davis",
+      "title": "Master's Student",
+      "photo": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 2"
+    },
+    {
+      "name": "Michael Wilson",
+      "title": "Master's Student",
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&h=200&q=80",
+      "details": "Year 1"
+    }
+  ],
+  "undergraduate_students": [
+    {
+      "name": "Jessica Miller",
+      "title": "Undergraduate Research Assistant",
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80"
+      },
+      {
+        "name": "Daniel Anderson",
+        "title": "Undergraduate Research Assistant",
+        "photo": "https://images.unsplash.com/photo-1531123897727-8e259fa380ee?auto=format&fit=crop&w=200&h=200&q=80"
+      }
+  ]
+}

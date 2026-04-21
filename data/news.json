@@ -1,0 +1,23 @@
+[
+    {
+        "date": "2026-03-15",
+        "title": "New Research Grant Awarded",
+        "content": "Our group has received a major research grant from the National Science Foundation to study single-atom catalysts.",
+        "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
+        "tag": "Award"
+    },
+    {
+        "date": "2026-02-20",
+        "title": "Paper Published in Nature Communications",
+        "content": "Our latest work on high-entropy alloy electrocatalysts is now available online. Congratulations to the team!",
+        "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
+        "tag": "Publication"
+    },
+    {
+        "date": "2026-01-10",
+        "title": "Welcome New PhD Students",
+        "content": "We are excited to welcome three new PhD students joining our group this semester. Looking forward to your great work!",
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        "tag": "Event"
+    }
+]

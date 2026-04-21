@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EC-ZERO Lab at Shanghai Jiao Tong University, led by Assoc. Prof. Tianze WU. We leverage AI for Science to accelerate electrocatalytic discovery for hydrogen energy and sustainable carbon neutrality.">
+    <title>EC-ZERO Lab | SJTU</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="/src/tailwind-built.css"> -->
+    <!-- FontAwesome CDN -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#3b82f6',
+                            DEFAULT: '#1d4ed8', // blue-700
+                            dark: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.5));
+        }
+    </style>
+    <style>
+        /* 防止页面加载瞬间的中英文混杂 */
+        .lang-zh-content { display: none; }
+        [lang="zh"] .lang-zh-content { display: block; }
+        [lang="zh"] .lang-en-content { display: none; }
+        
+        .font-zero {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-feature-settings: "zero";
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/fonts-CQY5IpRK.css">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- 1. Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        
+        <div class="absolute inset-0 z-0">
+            <img src="/hero.webp" alt="Future Electrocatalysis Laboratory" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 hero-gradient bg-black/30"></div> 
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
+            
+            <div class="lang-en-content">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                    Future Electrocatalysis <br /> from
+                    <span class="text-blue-400 inline-block">
+                        <span class="font-zero">ZER0</span>
+                    </span>
+                </h1>
+                <div class="flex flex-wrap justify-center gap-4 mt-10 mb-12">
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">Catalytic Frontiers</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">Interdisciplinary Synergy</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">Sustainable Technologies</span>
+                </div>
+            </div>
+
+            <div class="lang-zh-content">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                    从 <span class="text-blue-400 font-extrabold mb-6 tracking-tight leading-tight">"零"</span> 出发 <br /> 
+                    未来电催化
+                </h1>
+                <div class="flex flex-wrap justify-center gap-4 mt-10 mb-12">
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">电催化前沿</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">多学科交叉</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white text-base md:text-lg tracking-widest uppercase font-bold">可持续技术</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mt-4">
+                <a href="#research" class="lang-en-content px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1">
+                    Explore Our Research
+                </a>
+                <a href="#opportunities" class="lang-en-content px-10 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 rounded-full font-bold transition-all transform hover:-translate-y-1">
+                    Join Our Lab
+                </a>
+                
+                <a href="#research" class="lang-zh-content px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1">
+                    研究方向
+                </a>
+                <a href="#opportunities" class="lang-zh-content px-10 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 rounded-full font-bold transition-all transform hover:-translate-y-1">
+                    加入我们
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 3. News & Highlights -->
+    <!-- <section class="hidden py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-12">
+                
+                <div>
+                    <div class="lang-en-content">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">News & Highlights</h2>
+                    </div>
+                    <div class="lang-zh-content">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">新闻动态</h2>
+                    </div>
+                    <div class="w-20 h-1 bg-brand rounded-full"></div>
+                </div>
+
+                <a href="news.html" class="text-brand font-semibold hover:underline">
+                    <span class="lang-en-content">View All News <i class="fas fa-arrow-right ml-1"></i></span>
+                    <span class="lang-zh-content">查看更多新闻 <i class="fas fa-arrow-right ml-1"></i></span>
+                </a>
+            </div> 
+            
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 4. Research Areas -->
+    <section id="research" class="py-24 bg-gray-50">
+        <div id="research-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Research content will be loaded here from content/research.html -->
+            <div class="animate-pulse bg-gray-200 h-96 rounded-3xl"></div>
+        </div>
+    </section>
+
+    <!-- 5. Selected Publications -->
+    <section id="publications" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-16">
+                <div>
+                    <div class="lang-en-content">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Selected Publications</h2>
+                    </div>
+                    <div class="lang-zh-content">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">精选论文</h2>
+                    </div>
+                    <div class="w-24 h-1 bg-brand rounded-full"></div>
+                </div>
+
+                <div>
+                    <a href="publications.html" class="lang-en-content text-brand font-semibold hover:underline">
+                        Full List of Publications <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                    <a href="publications.html" class="lang-zh-content text-brand font-semibold hover:underline">
+                        查看完整论文列表 <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="publications-container" class="prose prose-blue max-w-none space-y-8">
+                <div class="animate-pulse bg-gray-100 h-48 rounded-3xl"></div>
+                <div class="animate-pulse bg-gray-100 h-48 rounded-3xl"></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 7. Opportunities -->
+    <section id="opportunities" class="py-24 bg-gray-50 text-slate-900">
+        <div id="opportunities-content">
+            <!-- Opportunities content will be loaded here from content/opportunities.html -->
+            <div class="animate-pulse bg-white/10 h-96 rounded-3xl max-w-5xl mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <script>
+    /**
+     * 防爬虫邮件联系函数
+     * 原理：只有在用户真实点击时，才在内存中拼凑出邮箱地址
+     */
+    window.handleContact = function(e) {
+        // 防止默认行为
+        if (e) e.preventDefault();
+        
+        // 拆分邮箱地址，让爬虫无法通过正则匹配完整字符串
+        const user = 'ec-zero';
+        const domain = 'sjtu.edu.cn';
+        const subject = 'Inquiry from EC-ZERO Lab Website';
+        
+        // 动态拼凑并唤起邮件客户端
+        const fullAddress = user + '@' + domain;
+        window.location.href = 'mailto:' + fullAddress + '?subject=' + encodeURIComponent(subject);
+    };
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. 获取当前语言
+        const currentLang = localStorage.getItem('lab_lang') || 'en';
+        
+        // 2. 设置按钮显示的文案：如果你是英文，按钮就显示“中文”；反之亦然
+        const toggleText = document.getElementById('lang-toggle-text');
+        if (toggleText) {
+            toggleText.innerText = currentLang === 'en' ? '中文' : 'English';
+        }
+
+        // 3. 处理页面上硬编码的文字 (data-zh / data-en)
+        document.querySelectorAll('[data-zh]').forEach(el => {
+            el.innerText = el.getAttribute('data-' + currentLang);
+        });
+    });
+
+    // 4. 定义点击切换的函数
+    function handleToggleLanguage() {
+        const currentLang = localStorage.getItem('lab_lang') || 'en';
+        // 切换逻辑：如果是 en 就切到 zh，如果是 zh 就切到 en
+        const targetLang = currentLang === 'en' ? 'zh' : 'en';
+        
+        // 调用你在 app.js 里写的那个全局函数
+        if (typeof window.switchLanguage === 'function') {
+            window.switchLanguage(targetLang);
+        } else {
+            // 万一 app.js 没加载完，这里做个兜底
+            localStorage.setItem('lab_lang', targetLang);
+            window.location.reload();
+        }
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const lang = localStorage.getItem('lab_lang') || 'en';
+        
+        // 自动查找所有带有 data-en 和 data-zh 的元素进行替换
+        document.querySelectorAll('[data-zh]').forEach(el => {
+            el.innerText = el.getAttribute('data-' + lang);
+        });
+
+        // 也可以顺便高亮当前选中的语言按钮
+        if(lang === 'zh') {
+            document.querySelector('.lang-zh-btn')?.classList.add('bg-brand', 'text-white');
+        } else {
+            document.querySelector('.lang-en-btn')?.classList.add('bg-brand', 'text-white');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- 1. Navbar -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex-shrink-0">
+                <a href="index.html" class="flex items-center gap-3 group transition-all duration-300">
+                    <div class="w-14 h-14 flex items-center justify-center">
+                        <img 
+                            src="/images/assets/ec-zero-logo-transperant-1A4FA2-blue.svg" 
+                            class="w-full h-full object-contain transform scale-125 group-hover:scale-135 transition-transform duration-300" 
+                            alt="EC-Zero Logo"
+                        >
+                    </div>
+
+                    <div class="flex flex-col justify-center items-start">
+                        <span class="font-bold text-2xl tracking-tight text-brand-dark leading-none group-hover:text-indigo-600 transition-colors">
+                            EC-<span class="text-indigo-600 font-mono group-hover:text-indigo-800">ZER0</span> 实验室
+                        </span>
+                        
+                        <span class="text-[10px] md:text-[13px] font-medium tracking-[0.34em] text-slate-400 mt-1 leading-none uppercase transition-colors group-hover:text-slate-600 pr-[-0.45em]">
+                            未来智能电催化实验室
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#home" class="text-gray-700 hover:text-brand font-medium transition-colors">首页</a>
+                <!-- <a href="news.html" class="text-gray-700 hover:text-brand font-medium transition-colors">新闻</a> -->
+                <a href="index.html#research" class="text-gray-700 hover:text-brand font-medium transition-colors">研究方向</a>
+                <a href="people.html" class="text-gray-700 hover:text-brand font-medium transition-colors">成员介绍</a>
+                <a href="publications.html" class="text-gray-700 hover:text-brand font-medium transition-colors">学术成果</a>
+                <a href="index.html#opportunities" class="text-gray-700 hover:text-brand font-medium transition-colors">加入我们</a>
+                <button 
+                    id="lang-toggle-btn" 
+                    onclick="handleToggleLanguage()"
+                    class="text-sm font-bold border border-gray-300 px-3 py-1.5 rounded-full hover:bg-gray-100 hover:border-brand transition-all flex items-center gap-2"
+                >
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-toggle-text">English</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-brand focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 animate-fade-in-down">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+            <a href="index.html#home" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">首页</a>
+            <!-- <a href="news.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">新闻</a> -->
+            <a href="index.html#research" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">研究方向</a>
+            <a href="people.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">成员介绍</a>
+            <a href="publications.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">学术成果</a>
+            <a href="index.html#opportunities" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-brand rounded-md font-medium">加入我们</a>
+            <button 
+                id="lang-toggle-btn" 
+                onclick="handleToggleLanguage()"
+                class="text-sm font-bold border border-gray-300 px-3 py-1.5 rounded-full hover:bg-gray-100 hover:border-brand transition-all flex items-center gap-2"
+            >
+                <i class="fas fa-globe"></i>
+                <span id="lang-toggle-text">English</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Scripts -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="/js/app.js"></script>
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('py-2', 'shadow-lg');
+            navbar.classList.remove('py-0');
+        } else {
+            navbar.classList.remove('py-2', 'shadow-lg');
+            navbar.classList.add('py-0');
+        }
+    });
+
+    // Smooth Scrolling for all links
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+            
+            if (href.includes('#') && (href.startsWith('#') || (isHomePage && href.startsWith('index.html#')))) {
+                const targetId = href.split('#')[1];
+                const target = document.getElementById(targetId);
+                
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Update URL without jump
+                    history.pushState(null, null, '#' + targetId);
+                }
+            }
+        });
+    });
+</script> -->

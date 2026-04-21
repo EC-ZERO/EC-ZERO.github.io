@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | EC-ZERO Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#3b82f6',
+                            DEFAULT: '#1d4ed8',
+                            dark: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* 💡 核心显隐逻辑 */
+        .lang-zh-content { display: none; }
+        [lang="zh"] .lang-zh-content { display: block; }
+        [lang="zh"] .lang-en-content { display: none; }
+    </style>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <div id="navbar-placeholder"></div>
+
+    <header class="pt-40 pb-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="lang-en-content">
+                <h1 class="text-5xl font-extrabold mb-4">Publications</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    A comprehensive list of our group's research output in leading scientific journals.
+                </p>
+            </div>
+            <div class="lang-zh-content">
+                <h1 class="text-5xl font-extrabold mb-4">学术成果</h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                    我们在国际顶尖学术期刊上发表的研究成果全清单
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-24 bg-white min-h-screen">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="publications-container" class="prose prose-blue max-w-none space-y-12">
+                <div class="animate-pulse space-y-8">
+                    <div class="h-8 bg-gray-200 rounded w-1/4"></div>
+                    <div class="space-y-4">
+                        <div class="h-6 bg-gray-100 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-100 rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/app.js"></script>
+    <script>
+        // 页面启动逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            // 设定 HTML 语言戳
+            const lang = localStorage.getItem('lab_lang') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+        });
+    </script>
+</body>
+</html>
