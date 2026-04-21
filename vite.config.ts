@@ -6,13 +6,17 @@ import Sitemap from 'vite-plugin-sitemap'; // 1. 导入插件
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  const SCHOOL_SITE_URL = 'https://gift.sjtu.edu.cn/ec-zero';
+  
   return {
+    base: './',
+    
     plugins: [
       react(), 
       tailwindcss(),
       // 2. 配置 Sitemap
       Sitemap({
-        hostname: 'https://ec-zero.github.io',
+        hostname: SCHOOL_SITE_URL,
         
         // 1. 彻底停用手动路由，因为插件会自动扫描 dist 根目录下的 index, people, publications
         // 这样可以解决“双份”重复的问题
@@ -48,9 +52,9 @@ export default defineConfig(({mode}) => {
         },
       },
     },
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-    },
+    // define: {
+    //   'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+    // },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
