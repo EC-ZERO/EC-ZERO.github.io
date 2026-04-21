@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ec-zero.github.io/sitemap.xml
+Sitemap: https://gift.sjtu.edu.cn/ec-zero/sitemap.xml
