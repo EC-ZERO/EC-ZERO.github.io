@@ -45,6 +45,7 @@ jobs:
         run: |
           cd dist
           git init
+          git checkout -b main
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
