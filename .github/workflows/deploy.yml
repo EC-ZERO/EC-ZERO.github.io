@@ -1,4 +1,4 @@
-name: Build and Deploy (Branch + Pages)
+name: Sync to GitHub and CNB
 
 on:
   push:
@@ -28,10 +28,26 @@ jobs:
           npm install
           npm run build
           
-      - name: Push to Deploy Branch
-        uses: peaceiris/actions-gh-pages@v4 # 升级到 v4 更稳定
+      # 1. 第一发：推送到 GitHub 的 deploy 分支 (用于你的 github.io 预览)
+      - name: Push to GitHub Deploy Branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: deploy # 所有的静态文件都会在这里
+          publish_branch: deploy
           commit_message: "Site updated: ${{ github.event.head_commit.message }}"
+
+      # 2. 第二发：强制同步到 cnb.cool (用于学校服务器拉取)
+      - name: Push to cnb.cool
+        env:
+          # 调用你刚才在 GitHub Secrets 里存的那个 Token
+          CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
+        run: |
+          cd dist
+          git init
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add .
+          git commit -m "Deploy from GitHub Action to CNB"
+          # 使用你提到的 cnb 用户名和 Token 进行鉴权推送
+          git push --force https://cnb:${{ secrets.CNB_TOKEN }}@cnb.cool/SJTU-EC-ZERO/EC-ZERO.github.io.git main
