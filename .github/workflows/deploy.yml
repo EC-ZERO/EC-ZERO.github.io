@@ -1,4 +1,4 @@
-name: Sync to GitHub and CNB (Auto-Patching)
+name: Sync to GitHub and CNB (Strict Patching)
 
 on:
   push:
@@ -30,7 +30,6 @@ jobs:
       # 第一阶段：为 GitHub Pages 构建并发布 (Root Base)
       # ==========================================
       - name: Build for GitHub
-        # 强制 base 为 /，确保 ec-zero.github.io 正常
         run: npm run build -- --base=/
           
       - name: Push to GitHub Deploy Branch
@@ -45,18 +44,29 @@ jobs:
       # 第二阶段：为学校官网构建、修复路径并同步到 CNB
       # ==========================================
       - name: Build for School
-        # 这里的 base 解决了静态资源（js/css）的加载问题
         run: npm run build -- --base=/ec-zero/
 
       - name: Patch Hardcoded Paths for School
-        # 【黑科技核心】解决皇老师截图里的 app.js 404 问题
-        # 自动把代码里的 "/content/" 换成 "/ec-zero/content/"
-        # 自动把代码里的 "/data/" 换成 "/ec-zero/data/"
         run: |
-          find dist -type f -name "*.js" -exec sed -i 's|"/content/|"/ec-zero/content/|g' {} +
-          find dist -type f -name "*.js" -exec sed -i 's|"/data/|"/ec-zero/data/|g' {} +
-          echo "Subdirectory paths patched."
+          # 1. 处理 content 和 data 路径
+          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i 's|"/content/|"/ec-zero/content/|g' {} +
+          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i "s|'/content/|'/ec-zero/content/|g" {} +
+          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i 's|"/data/|"/ec-zero/data/|g' {} +
+          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i "s|'/data/|'/ec-zero/data/|g" {} +
           
+          # 2. 处理 images 目录（非常重要）
+          find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i 's|"/images/|"/ec-zero/images/|g' {} +
+          find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|'/images/|'/ec-zero/images/|g" {} +
+          
+          # 3. 处理根目录下的单张图片 (hero.webp, hydrogen.webp 等)
+          # 为了防止误伤，我们匹配 "/名字.webp" 这种格式
+          for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
+            find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" {} +
+            find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|'/$img'|'/ec-zero/$img'|g" {} +
+          done
+          
+          echo "All paths including images have been patched for subdirectory."
+
       - name: Push to cnb.cool
         env:
           CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
@@ -67,6 +77,5 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
-          git commit -m "Deploy for School Subdirectory (Patched)"
-          # 使用 cnb 用户名和 Token 推送到腾讯云
+          git commit -m "Deploy for School Subdirectory (Patched Quotes)"
           git push --force https://cnb:${{ secrets.CNB_TOKEN }}@cnb.cool/SJTU-EC-ZERO/EC-ZERO.github.io.git main
