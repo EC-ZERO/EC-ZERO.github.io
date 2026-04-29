@@ -1,4 +1,4 @@
-name: Sync to GitHub and CNB
+name: Sync to GitHub and CNB (Auto-Patching)
 
 on:
   push:
@@ -23,24 +23,42 @@ jobs:
           node-version: 20
           cache: 'npm'
           
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm install
+
+      # ==========================================
+      # 第一阶段：为 GitHub Pages 构建并发布 (Root Base)
+      # ==========================================
+      - name: Build for GitHub
+        # 强制 base 为 /，确保 ec-zero.github.io 正常
+        run: npm run build -- --base=/
           
-      # 1. 第一发：推送到 GitHub 的 deploy 分支 (用于你的 github.io 预览)
       - name: Push to GitHub Deploy Branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: deploy
-          commit_message: "Site updated: ${{ github.event.head_commit.message }}"
+          commit_message: "Site updated (Root): ${{ github.event.head_commit.message }}"
 
-      # 2. 第二发：强制同步到 cnb.cool (用于学校服务器拉取)
+      # ==========================================
+      # 第二阶段：为学校官网构建、修复路径并同步到 CNB
+      # ==========================================
+      - name: Build for School
+        # 这里的 base 解决了静态资源（js/css）的加载问题
+        run: npm run build -- --base=/ec-zero/
+
+      - name: Patch Hardcoded Paths for School
+        # 【黑科技核心】解决皇老师截图里的 app.js 404 问题
+        # 自动把代码里的 "/content/" 换成 "/ec-zero/content/"
+        # 自动把代码里的 "/data/" 换成 "/ec-zero/data/"
+        run: |
+          find dist -type f -name "*.js" -exec sed -i 's|"/content/|"/ec-zero/content/|g' {} +
+          find dist -type f -name "*.js" -exec sed -i 's|"/data/|"/ec-zero/data/|g' {} +
+          echo "Subdirectory paths patched."
+          
       - name: Push to cnb.cool
         env:
-          # 调用你刚才在 GitHub Secrets 里存的那个 Token
           CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
         run: |
           cd dist
@@ -49,6 +67,6 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
-          git commit -m "Deploy from GitHub Action to CNB"
-          # 使用你提到的 cnb 用户名和 Token 进行鉴权推送
+          git commit -m "Deploy for School Subdirectory (Patched)"
+          # 使用 cnb 用户名和 Token 推送到腾讯云
           git push --force https://cnb:${{ secrets.CNB_TOKEN }}@cnb.cool/SJTU-EC-ZERO/EC-ZERO.github.io.git main
