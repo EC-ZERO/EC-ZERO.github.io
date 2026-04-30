@@ -48,42 +48,56 @@ jobs:
       - name: Patch Hardcoded Paths for School
         # 【关键修正】增加了对 *.json 文件的处理
         run: |
-          # 1. 动态获取所有手术清单，确保包含 .xml 和 .json
-          TARGET_FILES=$(find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.json" -o -name "*.xml" \))
+          # 1. 明确手术区域
+          # 专门提取 Sitemap 文件，因为它需要进行域名级别的替换（从根域名到子目录域名）
+          SITEMAP_FILE="dist/sitemap.xml"
           
-          if [ -z "$TARGET_FILES" ]; then
-            echo "No files found to patch."
-          else
-            echo "Found files to patch. Starting precision surgery..."
-            
-            # 【关键修正 1】先处理域名替换，但不带末尾斜杠以确保最大匹配率
-            # 这会把 sitemap.xml 里的链接全部修正
-            sed -i 's|https://gift.sjtu.edu.cn|https://gift.sjtu.edu.cn/ec-zero|g' $TARGET_FILES || true
-            sed -i 's|https://ec-zero.github.io|https://gift.sjtu.edu.cn/ec-zero|g' $TARGET_FILES || true
+          # 动态获取常规资源文件清单（JS, HTML, CSS, JSON）
+          # 注意：这里特意排除了 .xml 文件，防止全局域名替换误伤到 Footer 等组件里的外部官网链接
+          RESOURCE_FILES=$(find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.json" \))
+          
+          echo "Starting precision surgery for EC-ZERO Lab..."
 
-            # 【关键修正 2：救护车逻辑】把误伤的学院官网主页链接改回来
-            # 这样 footer 里的 /en 链接就会恢复正常，不再指向 /ec-zero/en
-            sed -i 's|https://gift.sjtu.edu.cn/ec-zero/en|https://gift.sjtu.edu.cn/en|g' $TARGET_FILES || true
+          # =============================================================
+          # 【关键点 1】只针对 sitemap.xml 进行域名升级
+          # =============================================================
+          # 逻辑：Sitemap 必须包含完整路径才能保证 SEO 正确。
+          # 这样操作可以确保 footer.html 和 footer_cn.html 里的官网链接保持原样，不会被误改为 /ec-zero/en
+          if [ -f "$SITEMAP_FILE" ]; then
+            echo "Patching Sitemap domain: Correcting links to include /ec-zero/ subdirectory..."
+            sed -i 's|https://gift.sjtu.edu.cn/|https://gift.sjtu.edu.cn/ec-zero/|g' "$SITEMAP_FILE" || true
+            sed -i 's|https://ec-zero.github.io/|https://gift.sjtu.edu.cn/ec-zero/|g' "$SITEMAP_FILE" || true
+          fi
+
+          # =============================================================
+          # 【关键点 2】对所有资源文件进行路径修复
+          # =============================================================
+          # 逻辑：将所有硬编码的绝对路径（如 /content/）替换为相对于学校子目录的路径（如 /ec-zero/content/）
+          if [ -n "$RESOURCE_FILES" ]; then
+            echo "Patching resource paths in HTML/JS/JSON/CSS..."
             
-            # 2. 处理 content、data 和 images 路径
-            sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
-            sed -i "s|'/content/|'/ec-zero/content/|g" $TARGET_FILES || true
-            sed -i 's|"/data/|"/ec-zero/data/|g' $TARGET_FILES || true
-            sed -i "s|'/data/|'/ec-zero/data/|g" $TARGET_FILES || true
-            sed -i 's|"/images/|"/ec-zero/images/|g' $TARGET_FILES || true
-            sed -i "s|'/images/|'/ec-zero/images/|g" $TARGET_FILES || true
+            # A. 处理核心目录：content（内容片段）、data（JSON数据）、images（媒体资源）
+            # 同时兼容单引号和双引号的匹配
+            sed -i 's|"/content/|"/ec-zero/content/|g' $RESOURCE_FILES || true
+            sed -i "s|'/content/|'/ec-zero/content/|g" $RESOURCE_FILES || true
+            sed -i 's|"/data/|"/ec-zero/data/|g' $RESOURCE_FILES || true
+            sed -i "s|'/data/|'/ec-zero/data/|g" $RESOURCE_FILES || true
+            sed -i 's|"/images/|"/ec-zero/images/|g' $RESOURCE_FILES || true
+            sed -i "s|'/images/|'/ec-zero/images/|g" $RESOURCE_FILES || true
             
-            # 3. 处理根目录单张图片
+            # B. 处理根目录下的单张静态图片（如 hero.webp, hydrogen.webp 等）
+            # 这些图片不在 images 文件夹内，需要单独进行精准匹配替换
             for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
-              sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $TARGET_FILES || true
-              sed -i "s|'/$img'|'/ec-zero/$img'|g" $TARGET_FILES || true
+              sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $RESOURCE_FILES || true
+              sed -i "s|'/$img'|'/ec-zero/$img'|g" $RESOURCE_FILES || true
             done
             
-            # 4. 最终收尾：清理可能产生的双斜杠 (如 /ec-zero//index.html)
-            sed -i 's|ec-zero//|ec-zero/|g' $TARGET_FILES || true
-            
-            echo "Precision patching completed."
+            # C. 最终收尾：清理可能产生的双斜杠风险（防止出现 ec-zero//path）
+            # 这能确保生成的 URL 在浏览器控制台里看起来极其专业，没有任何冗余
+            sed -i 's|ec-zero//|ec-zero/|g' $RESOURCE_FILES || true
           fi
+          
+          echo "Surgery successful. All internal paths corrected. No collateral damage to external links."
 
       # ==========================================
       # 第三阶段：增量同步到 cnb.cool (保留历史日志)
