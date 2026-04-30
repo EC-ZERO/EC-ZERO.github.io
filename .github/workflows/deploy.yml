@@ -48,20 +48,24 @@ jobs:
       - name: Patch Hardcoded Paths for School
         # 【关键修正】增加了对 *.json 文件的处理
         run: |
-          # 1. 使用 find 动态获取所有需要手术的文件，确保包含 .json 和 .xml
-          # 这能完美解决 **/*.xml 找不到文件的问题
+          # 1. 动态获取所有手术清单，确保包含 .xml 和 .json
           TARGET_FILES=$(find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.json" -o -name "*.xml" \))
           
           if [ -z "$TARGET_FILES" ]; then
-            echo "No files found to patch. Skipping."
+            echo "No files found to patch."
           else
-            echo "Found files to patch: $TARGET_FILES"
+            echo "Found files to patch. Starting precision surgery..."
             
-            # 2. 修复 Sitemap 中的基础域名 (针对 .xml)
-            sed -i 's|https://gift.sjtu.edu.cn/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
-            sed -i 's|https://ec-zero.github.io/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
+            # 【关键修正 1】先处理域名替换，但不带末尾斜杠以确保最大匹配率
+            # 这会把 sitemap.xml 里的链接全部修正
+            sed -i 's|https://gift.sjtu.edu.cn|https://gift.sjtu.edu.cn/ec-zero|g' $TARGET_FILES || true
+            sed -i 's|https://ec-zero.github.io|https://gift.sjtu.edu.cn/ec-zero|g' $TARGET_FILES || true
 
-            # 3. 继续处理之前的 content、data 和 images 路径
+            # 【关键修正 2：救护车逻辑】把误伤的学院官网主页链接改回来
+            # 这样 footer 里的 /en 链接就会恢复正常，不再指向 /ec-zero/en
+            sed -i 's|https://gift.sjtu.edu.cn/ec-zero/en|https://gift.sjtu.edu.cn/en|g' $TARGET_FILES || true
+            
+            # 2. 处理 content、data 和 images 路径
             sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
             sed -i "s|'/content/|'/ec-zero/content/|g" $TARGET_FILES || true
             sed -i 's|"/data/|"/ec-zero/data/|g' $TARGET_FILES || true
@@ -69,16 +73,16 @@ jobs:
             sed -i 's|"/images/|"/ec-zero/images/|g' $TARGET_FILES || true
             sed -i "s|'/images/|'/ec-zero/images/|g" $TARGET_FILES || true
             
-            # 4. 处理根目录单张图片
+            # 3. 处理根目录单张图片
             for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
               sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $TARGET_FILES || true
               sed -i "s|'/$img'|'/ec-zero/$img'|g" $TARGET_FILES || true
             done
             
-            # 5. 最后检查：防止出现 //ec-zero// 这种双斜杠
+            # 4. 最终收尾：清理可能产生的双斜杠 (如 /ec-zero//index.html)
             sed -i 's|ec-zero//|ec-zero/|g' $TARGET_FILES || true
             
-            echo "All paths including Sitemap have been patched successfully."
+            echo "Precision patching completed."
           fi
 
       # ==========================================
