@@ -48,8 +48,12 @@ jobs:
       - name: Patch Hardcoded Paths for School
         # 【关键修正】增加了对 *.json 文件的处理
         run: |
-          # 定义需要补丁的文件类型，加上了 .json
-          TARGET_FILES="dist/**/*.js dist/**/*.html dist/**/*.css dist/**/*.json"
+          # 定义需要补丁的文件类型，加上了 .json 和 .xml
+          TARGET_FILES="dist/**/*.js dist/**/*.html dist/**/*.css dist/**/*.json dist/**/*.xml"
+
+          # 2. 修复 Sitemap 中的基础域名 (将根域名替换为子目录域名)
+          # 这里把 https://gift.sjtu.edu.cn/ 统一替换为 https://gift.sjtu.edu.cn/ec-zero/
+          sed -i 's|https://gift.sjtu.edu.cn/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
           
           # 1. 处理内容、数据、图片目录
           sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
