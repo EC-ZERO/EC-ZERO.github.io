@@ -1,4 +1,4 @@
-name: Sync to GitHub and CNB (Strict Patching)
+name: Sync to GitHub and CNB (Incremental & Strict Patching)
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       # ==========================================
-      # 第一阶段：为 GitHub Pages 构建并发布 (Root Base)
+      # 第一阶段：为 GitHub Pages 构建并发布
       # ==========================================
       - name: Build for GitHub
         run: npm run build -- --base=/
@@ -38,44 +38,54 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: deploy
-          commit_message: "Site updated (Root): ${{ github.event.head_commit.message }}"
 
       # ==========================================
-      # 第二阶段：为学校官网构建、修复路径并同步到 CNB
+      # 第二阶段：为学校官网构建并进行“全路径补丁”
       # ==========================================
       - name: Build for School
         run: npm run build -- --base=/ec-zero/
 
       - name: Patch Hardcoded Paths for School
+        # 【关键修正】增加了对 *.json 文件的处理
         run: |
-          # 1. 处理 content 和 data 路径
-          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i 's|"/content/|"/ec-zero/content/|g' {} +
-          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i "s|'/content/|'/ec-zero/content/|g" {} +
-          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i 's|"/data/|"/ec-zero/data/|g' {} +
-          find dist -type f \( -name "*.js" -o -name "*.html" \) -exec sed -i "s|'/data/|'/ec-zero/data/|g" {} +
+          # 定义需要补丁的文件类型，加上了 .json
+          TARGET_FILES="dist/**/*.js dist/**/*.html dist/**/*.css dist/**/*.json"
           
-          # 2. 处理 images 目录（非常重要）
-          find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i 's|"/images/|"/ec-zero/images/|g' {} +
-          find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|'/images/|'/ec-zero/images/|g" {} +
+          # 1. 处理内容、数据、图片目录
+          sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
+          sed -i "s|'/content/|'/ec-zero/content/|g" $TARGET_FILES || true
+          sed -i 's|"/data/|"/ec-zero/data/|g' $TARGET_FILES || true
+          sed -i "s|'/data/|'/ec-zero/data/|g" $TARGET_FILES || true
+          sed -i 's|"/images/|"/ec-zero/images/|g' $TARGET_FILES || true
+          sed -i "s|'/images/|'/ec-zero/images/|g" $TARGET_FILES || true
           
-          # 3. 处理根目录下的单张图片 (hero.webp, hydrogen.webp 等)
-          # 为了防止误伤，我们匹配 "/名字.webp" 这种格式
+          # 2. 处理根目录单张图片
           for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
-            find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" {} +
-            find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" \) -exec sed -i "s|'/$img'|'/ec-zero/$img'|g" {} +
+            sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $TARGET_FILES || true
+            sed -i "s|'/$img'|'/ec-zero/$img'|g" $TARGET_FILES || true
           done
-          
-          echo "All paths including images have been patched for subdirectory."
+          echo "All paths including JSON data have been patched."
 
-      - name: Push to cnb.cool
+      # ==========================================
+      # 第三阶段：增量同步到 cnb.cool (保留历史日志)
+      # ==========================================
+      - name: Push to cnb.cool (Incremental)
         env:
           CNB_TOKEN: ${{ secrets.CNB_TOKEN }}
         run: |
+          # 1. 建立临时工作区
+          mkdir -p ../temp_cnb
+          # 2. 克隆学校现有的仓库（这样才有 history）
+          git clone https://cnb:${{ secrets.CNB_TOKEN }}@cnb.cool/SJTU-EC-ZERO/EC-ZERO.github.io.git ../temp_cnb
+          
+          # 3. 将新的打包内容同步进去，但保留原有的 .git 文件夹
+          cp -rn ../temp_cnb/.git ./dist/
           cd dist
-          git init
-          git checkout -b main
-          git config user.name "GitHub Action"
+          
+          # 4. 提交并推送（这样就变成了正常的增量 commit）
+          git config user.name "Kevin Zhao Weiming (via Action)"
           git config user.email "action@github.com"
-          git add .
-          git commit -m "Deploy for School Subdirectory (Patched Quotes)"
-          git push --force https://cnb:${{ secrets.CNB_TOKEN }}@cnb.cool/SJTU-EC-ZERO/EC-ZERO.github.io.git main
+          git add -A
+          # 只有在有变化时才 commit
+          git diff-index --quiet HEAD || git commit -m "Site Update: ${{ github.event.head_commit.message }} (Patched for Subdirectory)"
+          git push origin main
