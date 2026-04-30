@@ -48,27 +48,38 @@ jobs:
       - name: Patch Hardcoded Paths for School
         # 【关键修正】增加了对 *.json 文件的处理
         run: |
-          # 定义需要补丁的文件类型，加上了 .json 和 .xml
-          TARGET_FILES="dist/**/*.js dist/**/*.html dist/**/*.css dist/**/*.json dist/**/*.xml"
+          # 1. 使用 find 动态获取所有需要手术的文件，确保包含 .json 和 .xml
+          # 这能完美解决 **/*.xml 找不到文件的问题
+          TARGET_FILES=$(find dist -type f \( -name "*.js" -o -name "*.html" -o -name "*.css" -o -name "*.json" -o -name "*.xml" \))
+          
+          if [ -z "$TARGET_FILES" ]; then
+            echo "No files found to patch. Skipping."
+          else
+            echo "Found files to patch: $TARGET_FILES"
+            
+            # 2. 修复 Sitemap 中的基础域名 (针对 .xml)
+            sed -i 's|https://gift.sjtu.edu.cn/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
+            sed -i 's|https://ec-zero.github.io/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
 
-          # 2. 修复 Sitemap 中的基础域名 (将根域名替换为子目录域名)
-          # 这里把 https://gift.sjtu.edu.cn/ 统一替换为 https://gift.sjtu.edu.cn/ec-zero/
-          sed -i 's|https://gift.sjtu.edu.cn/|https://gift.sjtu.edu.cn/ec-zero/|g' $TARGET_FILES || true
-          
-          # 1. 处理内容、数据、图片目录
-          sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
-          sed -i "s|'/content/|'/ec-zero/content/|g" $TARGET_FILES || true
-          sed -i 's|"/data/|"/ec-zero/data/|g' $TARGET_FILES || true
-          sed -i "s|'/data/|'/ec-zero/data/|g" $TARGET_FILES || true
-          sed -i 's|"/images/|"/ec-zero/images/|g' $TARGET_FILES || true
-          sed -i "s|'/images/|'/ec-zero/images/|g" $TARGET_FILES || true
-          
-          # 2. 处理根目录单张图片
-          for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
-            sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $TARGET_FILES || true
-            sed -i "s|'/$img'|'/ec-zero/$img'|g" $TARGET_FILES || true
-          done
-          echo "All paths including JSON data have been patched."
+            # 3. 继续处理之前的 content、data 和 images 路径
+            sed -i 's|"/content/|"/ec-zero/content/|g' $TARGET_FILES || true
+            sed -i "s|'/content/|'/ec-zero/content/|g" $TARGET_FILES || true
+            sed -i 's|"/data/|"/ec-zero/data/|g' $TARGET_FILES || true
+            sed -i "s|'/data/|'/ec-zero/data/|g" $TARGET_FILES || true
+            sed -i 's|"/images/|"/ec-zero/images/|g' $TARGET_FILES || true
+            sed -i "s|'/images/|'/ec-zero/images/|g" $TARGET_FILES || true
+            
+            # 4. 处理根目录单张图片
+            for img in hero.webp hydrogen.webp membrane.webp spin.webp; do
+              sed -i "s|\"/$img\"|\"/ec-zero/$img\"|g" $TARGET_FILES || true
+              sed -i "s|'/$img'|'/ec-zero/$img'|g" $TARGET_FILES || true
+            done
+            
+            # 5. 最后检查：防止出现 //ec-zero// 这种双斜杠
+            sed -i 's|ec-zero//|ec-zero/|g' $TARGET_FILES || true
+            
+            echo "All paths including Sitemap have been patched successfully."
+          fi
 
       # ==========================================
       # 第三阶段：增量同步到 cnb.cool (保留历史日志)
