@@ -29,102 +29,20 @@
     "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=en",
     "linkedin": "#"
   },
-  "teachers": [
-    {
-      "name": "Dr. Jane Doe",
-      "title": "Senior Research Scientist",
-      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "PhD, University of California",
-      "website": "https://zwm0426.github.io",
-      "github": "https://github.com/zwm0426",
-      "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=en",
-      "linkedin": "#"
-    },
-    {
-      "name": "Dr. Alan Smith",
-      "title": "Research Scientist",
-      "photo": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "PhD, University of Cambridge"
-    }
-  ],
-  "engineers": [
-    {
-      "name": "Emily Johnson",
-      "title": "Lab Engineer",
-      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "MSc, University of Texas"
-    },
-    {
-      "name": "Michael Brown",
-      "title": "Lab Technician",
-      "photo": "https://images.unsplash.com/photo-1531123897727-8e259fa380ee?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "BSc, University of Michigan"
-    }
-  ],
-  "postdocs": [
-    {
-      "name": "Dr. John Doe",
-      "title": "Postdoctoral Fellow",
-      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "PhD, MIT"
-    },
-    {
-      "name": "Dr. Alan Smith",
-      "title": "Postdoctoral Fellow",
-      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "PhD, Stanford"
-    }
-  ],
-  "phd_students": [
-    {
-      "name": "Jane Smith",
-      "title": "PhD Student",
-      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 4"
-    },
-    {
-      "name": "Sarah Wang",
-      "title": "PhD Student",
-      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 3"
-    },
-    {
-      "name": "David Lee",
-      "title": "PhD Student",
-      "photo": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 2"
-    },
-    {
-      "name": "Kevin Zhang",
-      "title": "PhD Student",
-      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 1"
-    }
-  ],
-  "master_students": [
-    {
-      "name": "Emily Davis",
-      "title": "Master's Student",
-      "photo": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 2"
-    },
-    {
-      "name": "Michael Wilson",
-      "title": "Master's Student",
-      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&h=200&q=80",
-      "details": "Year 1"
-    }
-  ],
   "undergraduate_students": [
     {
-      "name": "Jessica Miller",
-      "title": "Undergraduate Research Assistant",
-      "photo": "https://images.unsplash.com/photo-1524504388940-b1d814c0b735?auto=format&fit=crop&w=200&h=200&q=80"
+      "name": "Zhongyu CAO",
+      "school": "Global Institute of Future Technology",
+      "title": "Puyuan Future Scholar Plan",
+      "details": "Year 3",
+      "photo": "/images/assets/people/undergraduates/caozhongyu.webp"
       },
       {
-        "name": "Daniel Anderson",
-        "title": "Undergraduate Research Assistant",
-        "photo": "https://images.unsplash.com/photo-1531123897727-8e259fa380ee?auto=format&fit=crop&w=200&h=200&q=80"
+        "name": "Zhengduan ZHANG",
+        "school": "Global College",
+        "title": "Puyuan Future Scholar Plan",
+        "details": "Year 1",
+        "photo": "/images/assets/people/undergraduates/zhangzhengduan.webp"
       }
   ]
 }
