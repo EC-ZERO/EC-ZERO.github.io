@@ -307,56 +307,61 @@ async function loadPeople() {
 
         // --- B. 自动化渲染其他成员分类 ---
         // 定义顺序和对应的中英文标题 [JSON里的key, 英文名, 中文名]
-        // const groupConfigs = [
-        //     ['teachers', 'Teachers', '指导教师'],
-        //     ['engineers', 'Engineers', '工程师'],
-        //     ['postdocs', 'Postdoctoral Fellows', '博士后'],
-        //     ['phd_students', 'PhD Students', '博士研究生'],
-        //     ['master_students', 'Master Students', '硕士研究生'],
-        //     ['undergraduate_students', 'Undergraduate Students', '本科生']
-        // ];
+        const groupConfigs = [
+            ['teachers', 'Teachers', '指导教师'],
+            ['engineers', 'Engineers', '工程师'],
+            ['postdocs', 'Postdoctoral Fellows', '博士后'],
+            ['phd_students', 'PhD Students', '博士研究生'],
+            ['master_students', 'Master Students', '硕士研究生'],
+            ['undergraduate_students', 'Undergraduate Students', '本科生']
+        ];
 
-        // groupConfigs.forEach(([key, enTitle, zhTitle]) => {
-        //     const members = data[key];
-        //     // 💡 只有当这个分类有人的时候才渲染标题和容器
-        //     if (members && members.length > 0) {
-        //         html += `
-        //             <div class="mb-20">
-        //                 <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">
-        //                     ${currentLang === 'zh' ? zhTitle : enTitle}
-        //                 </h3>
-        //                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        //                     ${members.map(person => `
-        //                         <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-all group flex flex-col items-center">
-        //                             <div class="w-28 h-28 rounded-full mb-4 overflow-hidden border-2 border-gray-50 group-hover:border-brand transition-colors shadow-sm">
-        //                                 <img src="${person.photo || '/images/people/default.jpg'}" 
-        //                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
-        //                                     alt="${person.name}">
-        //                             </div>
+        groupConfigs.forEach(([key, enTitle, zhTitle]) => {
+            const members = data[key];
+            // 💡 只有当这个分类有人的时候才渲染标题和容器
+            if (members && members.length > 0) {
+                html += `
+                    <div class="mb-20">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-10 border-l-4 border-brand pl-4">
+                            ${currentLang === 'zh' ? zhTitle : enTitle}
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            ${members.map(person => `
+                                <div class="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-all group flex flex-col items-center">
+                                    <div class="w-28 h-28 rounded-full mb-4 overflow-hidden border-2 border-gray-50 group-hover:border-brand transition-colors shadow-sm">
+                                        <img src="${person.photo || '/images/people/default.jpg'}" 
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                                            alt="${person.name}">
+                                    </div>
                                     
-        //                             <h4 class="font-bold text-gray-900 mb-1 text-lg">${person.name}</h4>
+                                    <h4 class="font-bold text-gray-900 mb-1 text-lg">${person.name}</h4>
                                     
-        //                             <p class="text-gray-600 text-sm mb-3 leading-snug">${person.details || ''}</p>
+                                    <!-- 个人信息展示区：Title, Details, School -->
+                                    <div class="mb-4 flex flex-col gap-1">
+                                        ${person.title ? `<span class="text-brand text-xs font-semibold">${person.title}</span>` : ''}
+                                        ${person.details ? `<span class="text-gray-600 text-sm leading-snug">${person.details}</span>` : ''}
+                                        ${person.school ? `<span class="text-gray-400 text-xs">${person.school}</span>` : ''}
+                                    </div>
 
-        //                             <div class="mt-auto flex gap-3 justify-center">
-        //                                 ${person.website ? `
-        //                                     <a href="${person.website}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="Personal Website">
-        //                                         <i class="fas fa-globe text-lg"></i>
-        //                                     </a>
-        //                                 ` : ''}
-        //                                 ${person.github ? `
-        //                                     <a href="${person.github}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="GitHub">
-        //                                         <i class="fab fa-github text-lg"></i>
-        //                                     </a>
-        //                                 ` : ''}
-        //                             </div>
-        //                         </div>
-        //                     `).join('')}
-        //                 </div>
-        //             </div>
-        //         `;
-        //     }
-        // });
+                                    <div class="mt-auto flex gap-3 justify-center">
+                                        ${person.website ? `
+                                            <a href="${person.website}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="Personal Website">
+                                                <i class="fas fa-globe text-lg"></i>
+                                            </a>
+                                        ` : ''}
+                                        ${person.github ? `
+                                            <a href="${person.github}" target="_blank" class="text-gray-400 hover:text-brand transition-colors" title="GitHub">
+                                                <i class="fab fa-github text-lg"></i>
+                                            </a>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+        });
 
         container.innerHTML = html;
     } catch (e) {
