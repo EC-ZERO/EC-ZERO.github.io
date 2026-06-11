@@ -282,7 +282,7 @@ async function loadPeople() {
                     <div class="flex-1 text-center md:text-left">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">${data.lead_architect.name}</h3>
                         <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
-                        <p class="text-gray-600 text-base leading-relaxed mb-6">${Array.isArray(data.lead_architect.bio) ? data.lead_architect.bio.join(' ') : data.lead_architect.bio || ''}</p>
+                        <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
                         
                         <div class="flex justify-center md:justify-start flex-wrap gap-4">
                             ${data.lead_architect.website ? `
@@ -339,7 +339,13 @@ async function loadPeople() {
                                     <!-- 个人信息展示区：Title, Details, School -->
                                     <div class="mb-4 flex flex-col gap-1">
                                         ${person.title ? `<span class="text-brand text-xs font-semibold">${person.title}</span>` : ''}
-                                        ${person.details ? `<span class="text-gray-600 text-sm leading-snug">${person.details}</span>` : ''}
+                                        <div class="text-gray-600 text-base leading-relaxed mb-7 space-y-4">
+                                            ${
+                                                Array.isArray(data.lead_architect.bio)
+                                                    ? data.lead_architect.bio.map(p => `<p>${p}</p>`).join('')
+                                                    : `<p>${data.lead_architect.bio || ''}</p>`
+                                            }
+                                        </div>
                                         ${person.school ? `<span class="text-gray-400 text-xs">${person.school}</span>` : ''}
                                     </div>
 
