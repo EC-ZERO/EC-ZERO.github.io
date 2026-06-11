@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 首页逻辑：只有在首页才加载这些 HTML 片段
         tasks.push(loadHtmlSnippets()); 
         tasks.push(loadNews(3));
-        tasks.push(loadPublications(4));
+        tasks.push(loadPublications(5));
     }
 
     // 4. 【核心优化】并发执行所有任务，不使用 await 阻塞
