@@ -267,43 +267,43 @@ async function loadPeople() {
             </div>
         `;
 
-        // --- NEW: 渲染 Lead AI Architect 部分 ---
-        // 增加安全检查：只有当 data.lead_architect 存在时才渲染
-        // if (data.lead_architect && data.lead_architect.name) {
-        //     html += `
-        //         <div class="max-w-5xl mx-auto bg-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-10 border border-gray-100 mb-20 shadow-sm">
+        //--- NEW: 渲染 Lead AI Architect 部分 ---
+        //增加安全检查：只有当 data.lead_architect 存在时才渲染
+        if (data.lead_architect && data.lead_architect.name) {
+            html += `
+                <div class="max-w-5xl mx-auto bg-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-10 border border-gray-100 mb-20 shadow-sm">
                     
-        //             <div class="w-56 h-56 flex-shrink-0 rounded-full overflow-hidden border-2 border-gray-50 shadow-md">
-        //                 <img src="${data.lead_architect.photo || '/images/people/default.jpg'}" 
-        //                     alt="${data.lead_architect.name}" 
-        //                     class="w-full h-full object-cover">
-        //             </div>
+                    <div class="w-56 h-56 flex-shrink-0 rounded-full overflow-hidden border-2 border-gray-50 shadow-md">
+                        <img src="${data.lead_architect.photo || '/images/people/default.jpg'}" 
+                            alt="${data.lead_architect.name}" 
+                            class="w-full h-full object-cover">
+                    </div>
 
-        //             <div class="flex-1 text-center md:text-left">
-        //                 <h3 class="text-2xl font-bold text-gray-900 mb-2">${data.lead_architect.name}</h3>
-        //                 <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
-        //                 <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">${data.lead_architect.name}</h3>
+                        <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
+                        <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
                         
-        //                 <div class="flex justify-center md:justify-start flex-wrap gap-3">
-        //                     ${data.lead_architect.website ? `
-        //                         <a href="${data.lead_architect.website}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-        //                             <i class="fas fa-globe"></i> ${currentLang === 'zh' ? '个人主页' : 'Website'}
-        //                         </a>` : ''}
+                        <div class="flex justify-center md:justify-start flex-wrap gap-3">
+                            ${data.lead_architect.website ? `
+                                <a href="${data.lead_architect.website}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+                                    <i class="fas fa-globe"></i> ${currentLang === 'zh' ? '个人主页' : 'Website'}
+                                </a>` : ''}
                             
-        //                     ${data.lead_architect.github ? `
-        //                         <a href="${data.lead_architect.github}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-        //                             <i class="fab fa-github"></i> GitHub
-        //                         </a>` : ''}
+                            ${data.lead_architect.github ? `
+                                <a href="${data.lead_architect.github}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>` : ''}
                             
-        //                     ${data.lead_architect.google_scholar ? `
-        //                         <a href="${data.lead_architect.google_scholar}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-        //                             <i class="fas fa-graduation-cap"></i> ${currentLang === 'zh' ? '谷歌学术' : 'Google Scholar'}
-        //                         </a>` : ''}
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     `;
-        // }
+                            ${data.lead_architect.google_scholar ? `
+                                <a href="${data.lead_architect.google_scholar}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
+                                    <i class="fas fa-graduation-cap"></i> ${currentLang === 'zh' ? '谷歌学术' : 'Google Scholar'}
+                                </a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
 
         // --- B. 自动化渲染其他成员分类 ---
         // 定义顺序和对应的中英文标题 [JSON里的key, 英文名, 中文名]
