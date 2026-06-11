@@ -279,7 +279,7 @@ async function loadPeople() {
                             class="w-full h-full object-cover">
                     </div>
 
-                    <div class="flex-1 text-center md:text-left">
+                    <div class="flex-1 w-full text-left">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">${data.lead_architect.name}</h3>
                         <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
                         <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
