@@ -313,7 +313,7 @@ async function loadPeople() {
             ['postdocs', 'Postdoctoral Fellows', '博士后'],
             ['phd_students', 'PhD Students', '博士研究生'],
             ['master_students', 'Master Students', '硕士研究生'],
-            ['undergraduate_students', 'Puyuan Future Scholar', '溥渊未来学者']
+            ['undergraduate_students', 'Puyuan Future Scholars', '溥渊未来学者']
         ];
 
         groupConfigs.forEach(([key, enTitle, zhTitle]) => {
