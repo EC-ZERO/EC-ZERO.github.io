@@ -339,7 +339,13 @@ async function loadPeople() {
                                     <!-- 个人信息展示区：Title, Details, School -->
                                     <div class="mb-4 flex flex-col gap-1">
                                         ${person.title ? `<span class="text-brand text-xs font-semibold">${person.title}</span>` : ''}
-                                        ${person.details ? `<span class="text-gray-600 text-sm leading-snug">${person.details}</span>` : ''}
+                                        <div class="text-gray-600 text-base leading-relaxed mb-7 space-y-4">
+                                            ${
+                                                Array.isArray(data.lead_architect.bio)
+                                                    ? data.lead_architect.bio.map(p => `<p>${p}</p>`).join('')
+                                                    : `<p>${data.lead_architect.bio || ''}</p>`
+                                            }
+                                        </div>
                                         ${person.school ? `<span class="text-gray-400 text-xs">${person.school}</span>` : ''}
                                     </div>
 
