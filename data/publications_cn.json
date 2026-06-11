@@ -1,6 +1,17 @@
 [
   {
     "year": "2026",
+    "title": "Ammonia Splitting with Electrode Alternating for Durable Hydrogen Production",
+    "title_cn": "电极交替策略实现耐久氨裂解制氢",
+    "authors": "Wu, T.*, Dai, C., Zhang, Y., Liu, Y., Wu, Q., Elouarzaki, K., Meng, F., Lin, X., Wu, M., Fisher, A. C., & Xu, Z.",
+    "journal": "Nature Catalysis",
+    "doi": "10.1038/s41929-026-01554-3",
+    "link": "https://doi.org/10.1038/s41929-026-01554-3",
+    "image": "/images/publications/nature_sustainability1.webp",
+    "highlight": true
+  },
+  {
+    "year": "2026",
     "title": "Electrolysis with Built-in Seawater Desalination by Porous-Solid-Electrolyte Reactor",
     "title_cn": "利用多孔固体电解质反应器实现内置海水淡化的电解技术",
     "authors": "Wu, T.*, Zhu, S., Zhang, Y., Lin, X., Liu, L., Ye, H., Wang, H., & Xu, Z.",
