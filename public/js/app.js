@@ -284,20 +284,20 @@ async function loadPeople() {
                         <p class="text-brand font-semibold text-lg mb-4">${data.lead_architect.title}</p>
                         <p class="text-gray-600 text-base leading-relaxed mb-6">${data.lead_architect.bio || ''}</p>
                         
-                        <div class="flex justify-center md:justify-start flex-wrap gap-3">
+                        <div class="flex justify-center md:justify-start flex-wrap gap-4">
                             ${data.lead_architect.website ? `
-                                <a href="${data.lead_architect.website}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-                                    <i class="fas fa-globe"></i> ${currentLang === 'zh' ? '个人主页' : 'Website'}
+                                <a href="${data.lead_architect.website}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">
+                                    ${currentLang === 'zh' ? '个人主页' : 'Website'}
                                 </a>` : ''}
                             
                             ${data.lead_architect.github ? `
-                                <a href="${data.lead_architect.github}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-                                    <i class="fab fa-github"></i> GitHub
+                                <a href="${data.lead_architect.github}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">
+                                    GitHub
                                 </a>` : ''}
                             
                             ${data.lead_architect.google_scholar ? `
-                                <a href="${data.lead_architect.google_scholar}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-gray-50 text-gray-600 rounded-lg hover:bg-brand hover:text-white transition-all text-sm font-medium">
-                                    <i class="fas fa-graduation-cap"></i> ${currentLang === 'zh' ? '谷歌学术' : 'Google Scholar'}
+                                <a href="${data.lead_architect.google_scholar}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">
+                                    ${currentLang === 'zh' ? '谷歌学术' : 'Google Scholar'}
                                 </a>` : ''}
                         </div>
                     </div>
