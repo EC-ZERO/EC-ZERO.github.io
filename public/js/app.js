@@ -258,7 +258,7 @@ async function loadPeople() {
                     <ul class="list-disc list-inside text-gray-600 leading-relaxed mb-8">
                         ${data.pi.awards.map(award => `<li>${award}</li>`).join('')}
                     </ul>
-                    <div class="flex gap-4">
+                    <div class="flex justify-center md:justify-start flex-wrap gap-4">
                         <a href="${data.pi.google_scholar}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">${t('Google Scholar', '谷歌学术')}</a>
                         <a href="${data.pi.scopus}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">Scopus</a>
                         <a href="${data.pi.orcid}" target="_blank" class="px-6 py-2 border border-brand text-brand rounded-full font-semibold hover:bg-brand hover:text-white transition-colors text-sm">ORCID</a>
