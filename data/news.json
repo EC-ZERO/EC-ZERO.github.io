@@ -4,7 +4,7 @@
     "date": "2026-06-25",
     "title": "Our Work Highlighted in Nature Catalysis News & Views",
     "content": "Our recent article on electrode-alternating ammonia splitting was featured in a News & Views article in Nature Catalysis. The commentary highlights the potential of electrode alternation for efficient and durable ammonia electrolysis, offering new perspectives for hydrogen production from ammonia.",
-    "image": "images/hydrogen.webp",
+    "image": "images/news/nc-views-260625.webp",
     "tag": "Feature",
     "href": "https://www.nature.com/articles/s41929-026-01556-1",
     "highlightText": "Our electrode-alternating ammonia splitting work was highlighted in Nature Catalysis News & Views.",
@@ -16,7 +16,7 @@
     "date": "2026-06-11",
     "title": "Paper Published in Nature Catalysis",
     "content": "Our article, “Ammonia Splitting with Electrode Alternating for Durable Hydrogen Production”, has been published online in Nature Catalysis. This work demonstrates an electrode-alternating strategy for durable hydrogen production from ammonia and provides a new approach to overcoming catalyst poisoning in ammonia electrolysis.",
-    "image": "images/hero.webp",
+    "image": "images/news/nc-paper-260611.webp",
     "tag": "Publication",
     "href": "https://doi.org/10.1038/s41929-026-01554-3",
     "highlightText": "Our latest research article was published online in Nature Catalysis.",
@@ -26,11 +26,11 @@
   {
     "id": "2026-05-19-china-africa-low-carbon-catalysis-workshop",
     "date": "2026-05-19",
-    "title": "China–Africa Low-Carbon Catalysis Workshop Held",
-    "content": "The China–Africa Low-Carbon Catalysis Workshop was held on 19 May, bringing together our team and researchers from the University of South Africa for in-depth discussions on low-carbon catalysis, green hydrogen technologies, and future collaborative opportunities.",
-    "image": "images/membrane.webp",
+    "title": "China–Africa Seminar on Low-Carbon Catalysis Held",
+    "content": "The China–Africa Seminar on Low-Carbon Catalysis was held on 19 May, bringing together our team and researchers from the University of South Africa for in-depth discussions on low-carbon catalysis, green hydrogen technologies, and future collaborative opportunities.",
+    "image": "images/news/seminar-china-sa-260519.webp",
     "tag": "Event",
-    "highlightText": "The China–Africa Low-Carbon Catalysis Workshop was successfully held with the University of South Africa team.",
+    "highlightText": "The China–Africa Seminar on Low-Carbon Catalysis was successfully held with the University of South Africa team.",
     "highlight": true,
     "showOnHome": true
   }
