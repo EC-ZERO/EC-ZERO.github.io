@@ -1,23 +1,37 @@
 [
-    {
-        "date": "2026-03-15",
-        "title": "New Research Grant Awarded",
-        "content": "Our group has received a major research grant from the National Science Foundation to study single-atom catalysts.",
-        "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80",
-        "tag": "获奖"
-    },
-    {
-        "date": "2026-02-20",
-        "title": "Paper Published in Nature Communications",
-        "content": "Our latest work on high-entropy alloy electrocatalysts is now available online. Congratulations to the team!",
-        "image": "https://images.unsplash.com/photo-1532187875605-1ef6c017bb42?auto=format&fit=crop&w=800&q=80",
-        "tag": "出版"
-    },
-    {
-        "date": "2026-01-10",
-        "title": "欢迎新博士生加入",
-        "content": "我们很高兴欢迎三位新博士生加入我们这个学期。期待你们的精彩工作！",
-        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-        "tag": "活动"
-    }
+  {
+    "id": "2026-06-25-nature-catalysis-news-views",
+    "date": "2026-06-25",
+    "title": "我们的研究工作获 Nature Catalysis News & Views 专题评述",
+    "content": "我们关于电极交替氨裂解制氢的最新研究工作获得 Nature Catalysis News & Views 专题评述。该评述重点介绍了电极交替策略在高效、耐久氨电解中的应用潜力，并展望了其在氨制氢方向上的重要意义。",
+    "image": "images/hydrogen.webp",
+    "tag": "专题评述",
+    "href": "https://www.nature.com/articles/s41929-026-01556-1",
+    "highlightText": "我们的电极交替氨裂解制氢研究获 Nature Catalysis News & Views 专题评述。",
+    "highlight": true,
+    "showOnHome": true
+  },
+  {
+    "id": "2026-06-11-nature-catalysis-publication",
+    "date": "2026-06-11",
+    "title": "论文发表于 Nature Catalysis",
+    "content": "我们的研究论文《电极交替策略实现耐久氨裂解制氢》已在 Nature Catalysis 正式上线发表。该工作提出电极交替策略，实现了面向耐久氢气生产的氨裂解过程，并为缓解氨电解中的催化剂中毒问题提供了新的思路。",
+    "image": "images/hero.webp",
+    "tag": "论文",
+    "href": "https://doi.org/10.1038/s41929-026-01554-3",
+    "highlightText": "我们的最新研究论文发表于 Nature Catalysis。",
+    "highlight": true,
+    "showOnHome": true
+  },
+  {
+    "id": "2026-05-19-china-africa-low-carbon-catalysis-workshop",
+    "date": "2026-05-19",
+    "title": "中非低碳催化技术研讨会成功举办",
+    "content": "5月19日，中非低碳催化技术研讨会成功举办。南非大学团队与我们围绕低碳催化、绿色氢能技术及未来合作方向进行了深入交流，为后续中非低碳能源合作奠定了良好基础。",
+    "image": "images/membrane.webp",
+    "tag": "活动",
+    "highlightText": "中非低碳催化技术研讨会成功举办，南非大学团队与我们开展深入交流。",
+    "highlight": true,
+    "showOnHome": true
+  }
 ]

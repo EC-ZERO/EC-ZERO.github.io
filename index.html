@@ -116,35 +116,86 @@
         </div>
     </section>
 
-    <!-- 3. News & Highlights -->
-    <!-- <section class="hidden py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-12">
-                
-                <div>
-                    <div class="lang-en-content">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">News & Highlights</h2>
-                    </div>
-                    <div class="lang-zh-content">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">新闻动态</h2>
-                    </div>
-                    <div class="w-20 h-1 bg-brand rounded-full"></div>
-                </div>
-
-                <a href="news.html" class="text-brand font-semibold hover:underline">
-                    <span class="lang-en-content">View All News <i class="fas fa-arrow-right ml-1"></i></span>
-                    <span class="lang-zh-content">查看更多新闻 <i class="fas fa-arrow-right ml-1"></i></span>
-                </a>
-            </div> 
-            
-            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
-                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
-                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+    <!-- 2.1 News & Highlights Section Placeholder
+     <section class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <div class="text-sm font-semibold text-blue-600 mb-2">Latest Highlight</div>
+                <h2 class="text-xl font-bold text-gray-900">
+                Paper Published in Nature Communications
+                </h2>
+                <p class="mt-2 text-gray-600">
+                Our latest work on high-entropy alloy electrocatalysts is now available online.
+                </p>
+            </div>
+            <a href="news.html" class="shrink-0 text-blue-600 font-semibold">
+                Read more →
+            </a>
             </div>
         </div>
-    </section> -->
+        </section> -->
 
+    <!-- 2.2 News highlight running -->
+    <section id="news-highlight-bar" class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+            <div class="flex items-center gap-4 min-w-0">
+                <span
+                id="highlight-label"
+                class="shrink-0 inline-flex items-center rounded-full bg-blue-600 px-4 py-1.5 text-sm font-bold text-white"
+                >
+                最新动态
+                </span>
+
+                <a
+                id="highlight-link"
+                href="news.html"
+                class="min-w-0 text-gray-900 font-semibold hover:text-blue-600 transition-colors"
+                >
+                <span
+                    id="highlight-text"
+                    class="inline-block transition-all duration-300 ease-out"
+                >
+                    欢迎新博士生加入 EC-ZERO 实验室，开启智能电催化研究新阶段。
+                </span>
+                </a>
+            </div>
+
+            <a
+                id="highlight-more-link"
+                href="news.html"
+                class="shrink-0 text-blue-600 font-semibold hover:text-blue-700"
+            >
+                查看更多新闻 →
+            </a>
+
+            </div>
+        </div>
+        </section>
+
+    <!-- 2.5. News & Highlights Section Placeholder
+     <section class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
+                最新动态
+                </span>
+                <p class="text-gray-800 font-medium">
+                欢迎新博士生加入 EC-ZERO 实验室，开启智能电催化研究新阶段。
+                </p>
+            </div>
+            <a href="news.html" class="text-blue-600 font-semibold hover:text-blue-700">
+                查看更多新闻 →
+            </a>
+            </div>
+        </div>
+        </section> -->
+
+
+    
     <!-- 4. Research Areas -->
     <section id="research" class="py-24 bg-gray-50">
         <div id="research-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,6 +235,36 @@
             
         </div>
     </section>
+
+    <!-- 3. News & Highlights -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-12">
+                
+                <div>
+                    <div class="lang-en-content">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">News & Highlights</h2>
+                    </div>
+                    <div class="lang-zh-content">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">新闻动态</h2>
+                    </div>
+                    <div class="w-20 h-1 bg-brand rounded-full"></div>
+                </div>
+
+                <a href="news.html" class="text-brand font-semibold hover:underline">
+                    <span class="lang-en-content">View All News <i class="fas fa-arrow-right ml-1"></i></span>
+                    <span class="lang-zh-content">查看更多新闻 <i class="fas fa-arrow-right ml-1"></i></span>
+                </a>
+            </div> 
+            
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-gray-100 h-64 rounded-2xl"></div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- 7. Opportunities -->
     <section id="opportunities" class="py-24 bg-gray-50 text-slate-900">
@@ -269,5 +350,197 @@
         }
     });
 </script>
+
+<!--New highlight bar running related to 2.2-->
+    <script>
+        (() => {
+        if (window.__eczeroNewsHighlightInitialized) return;
+        window.__eczeroNewsHighlightInitialized = true;
+
+        const highlightConfig = {
+            zh: {
+            url: "data/news_cn.json",
+            label: "最新动态",
+            moreText: "查看更多新闻 →",
+            moreHref: "news.html"
+            },
+            en: {
+            url: "data/news.json",
+            label: "Latest",
+            moreText: "View all news →",
+            moreHref: "news.html"
+            }
+        };
+
+        const highlightBar = document.getElementById("news-highlight-bar");
+        const highlightLabel = document.getElementById("highlight-label");
+        const highlightText = document.getElementById("highlight-text");
+        const highlightLink = document.getElementById("highlight-link");
+        const highlightMoreLink = document.getElementById("highlight-more-link");
+
+        if (!highlightBar || !highlightLabel || !highlightText || !highlightLink || !highlightMoreLink) {
+            return;
+        }
+
+        let highlightItems = [];
+        let highlightIndex = 0;
+        let highlightTimer = null;
+        let highlightLang = detectHighlightLang();
+
+        function detectHighlightLang() {
+            const htmlLang = (document.documentElement.lang || "").toLowerCase();
+
+            if (htmlLang.startsWith("zh")) return "zh";
+            if (htmlLang.startsWith("en")) return "en";
+
+            const zhContent = document.querySelector(".lang-zh-content");
+            if (zhContent && window.getComputedStyle(zhContent).display !== "none") {
+            return "zh";
+            }
+
+            return "en";
+        }
+
+        function getHighlightText(item) {
+            return item.highlightText || item.title || item.content || "";
+        }
+
+        function getHighlightHref(item) {
+            if (item.href) return item.href;
+            if (item.link) return item.link;
+            if (item.id) return `news.html#${item.id}`;
+            return "news.html";
+        }
+
+        async function loadHighlights(lang) {
+            const config = highlightConfig[lang] || highlightConfig.en;
+
+            highlightLabel.textContent = config.label;
+            highlightMoreLink.textContent = config.moreText;
+            highlightMoreLink.href = config.moreHref;
+
+            try {
+            const response = await fetch(config.url, { cache: "no-store" });
+
+            if (!response.ok) {
+                throw new Error(`Failed to load ${config.url}`);
+            }
+
+            const news = await response.json();
+
+            highlightItems = news
+                .filter(item => item.highlight === true)
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            if (highlightItems.length === 0) {
+                highlightBar.classList.add("hidden");
+                stopHighlightRotation();
+                return;
+            }
+
+            highlightBar.classList.remove("hidden");
+            highlightIndex = 0;
+            renderHighlight(highlightIndex, false);
+            restartHighlightRotation();
+
+            } catch (error) {
+            console.error("Failed to load news highlights:", error);
+            highlightBar.classList.add("hidden");
+            stopHighlightRotation();
+            }
+        }
+
+        function renderHighlight(index, animate = true) {
+            if (!highlightItems.length) return;
+
+            const item = highlightItems[index];
+
+            if (!animate) {
+            highlightText.textContent = getHighlightText(item);
+            highlightLink.href = getHighlightHref(item);
+            return;
+            }
+
+            highlightText.classList.add("opacity-0", "-translate-y-1");
+
+            setTimeout(() => {
+            highlightText.textContent = getHighlightText(item);
+            highlightLink.href = getHighlightHref(item);
+            highlightText.classList.remove("opacity-0", "-translate-y-1");
+            }, 250);
+        }
+
+        function showNextHighlight() {
+            if (highlightItems.length <= 1) return;
+
+            highlightIndex = (highlightIndex + 1) % highlightItems.length;
+            renderHighlight(highlightIndex, true);
+        }
+
+        function startHighlightRotation() {
+            if (highlightItems.length <= 1) return;
+
+            stopHighlightRotation();
+            highlightTimer = setInterval(showNextHighlight, 4500);
+        }
+
+        function stopHighlightRotation() {
+            if (highlightTimer) {
+            clearInterval(highlightTimer);
+            highlightTimer = null;
+            }
+        }
+
+        function restartHighlightRotation() {
+            stopHighlightRotation();
+            startHighlightRotation();
+        }
+
+        function checkLanguageChange() {
+            const newLang = detectHighlightLang();
+
+            if (newLang !== highlightLang) {
+            highlightLang = newLang;
+            loadHighlights(highlightLang);
+            }
+        }
+
+        highlightBar.addEventListener("mouseenter", stopHighlightRotation);
+        highlightBar.addEventListener("mouseleave", startHighlightRotation);
+
+        document.addEventListener("click", () => {
+            setTimeout(checkLanguageChange, 80);
+        });
+
+        const observer = new MutationObserver(() => {
+            setTimeout(checkLanguageChange, 80);
+        });
+
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["lang", "class"]
+        });
+
+        const zhContent = document.querySelector(".lang-zh-content");
+        const enContent = document.querySelector(".lang-en-content");
+
+        if (zhContent) {
+            observer.observe(zhContent, {
+            attributes: true,
+            attributeFilter: ["class", "style"]
+            });
+        }
+
+        if (enContent) {
+            observer.observe(enContent, {
+            attributes: true,
+            attributeFilter: ["class", "style"]
+            });
+        }
+
+        loadHighlights(highlightLang);
+        })();
+        </script>
+
 </body>
 </html>
