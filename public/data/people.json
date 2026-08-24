@@ -30,6 +30,12 @@
     "linkedin": "#"
   },
   "undergraduate_students": [
+    {
+      "name": "Zhongyu CAO",
+      "school": "Global Institute of Future Technology",
+      "details": "Year 3 Undergradute",
+      "photo": "/images/assets/people/undergraduates/caozhongyu.webp"
+      },
       {
         "name": "Zhengduan ZHANG",
         "school": "Global College",
