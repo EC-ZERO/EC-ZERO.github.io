@@ -31,14 +31,12 @@
   "phd_students": [
     {
       "name": "武金宵",
-      "title": "博士生",
       "details": "博士一年级",
       "photo": "/images/assets/people/phd_students/wujinxiao.webp"
     },
     {
       "name": "李慢慢",
-      "title": "博士生",
-      "details": "博士三年级",
+      "details": "访问博士生·三年级",
       "photo": "/images/assets/people/phd_students/limanman.webp"
     }
   ],
