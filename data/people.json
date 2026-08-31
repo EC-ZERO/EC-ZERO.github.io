@@ -32,12 +32,12 @@
    "phd_students": [
     {
       "name": "Jinxiao WU",
-      "details": "Year 1",
+      "details": "PhD Student · Year 1",
       "photo": "/images/assets/people/phd_students/wujinxiao.webp"
     },
     {
       "name": "Manman LI",
-      "details": "Visiting PhD Student, Year 3",
+      "details": "Visiting PhD Student · Year 3",
       "photo": "/images/assets/people/phd_students/limanman.webp"
     }
   ],
@@ -45,13 +45,13 @@
     {
       "name": "Zhongyu CAO",
       "school": "Global Institute of Future Technology",
-      "details": "Year 3 Undergradute",
+      "details": "Undergradute · Year 4",
       "photo": "/images/assets/people/undergraduates/caozhongyu.webp"
       },
       {
         "name": "Zhengduan ZHANG",
         "school": "Global College",
-        "details": "Year 1 Undergradute",
+        "details": "Undergradute · Year 2",
         "photo": "/images/assets/people/undergraduates/zhangzhengduan.webp"
       }
   ]
