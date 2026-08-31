@@ -28,6 +28,20 @@
     "github": "https://github.com/zwm0426",
     "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=CN"
   },
+  "phd_students": [
+    {
+      "name": "武金宵",
+      "title": "博士生",
+      "details": "博士一年级",
+      "photo": "/images/assets/people/undergraduates/wujinxiao.webp"
+    },
+    {
+      "name": "李慢慢",
+      "title": "博士生",
+      "details": "博士三年级",
+      "photo": "/images/assets/people/phd_students/limanman.webp"
+    }
+  ],
   "undergraduate_students": [
     {
       "name": "曹仲玉",

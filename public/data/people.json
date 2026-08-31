@@ -29,6 +29,20 @@
     "google_scholar": "https://scholar.google.com/citations?user=CN0JbkoAAAAJ&hl=en",
     "linkedin": "#"
   },
+   "phd_students": [
+    {
+      "name": "Jinxiao WU",
+      "title": "PhD Student",
+      "details": "Year 1",
+      "photo": "/images/assets/people/phd_students/wujinxiao.webp"
+    },
+    {
+      "name": "Manman LI",
+      "title": "PhD Student",
+      "details": "Year 3",
+      "photo": "/images/assets/people/phd_students/limanman.webp"
+    }
+  ],
   "undergraduate_students": [
     {
       "name": "Zhongyu CAO",
