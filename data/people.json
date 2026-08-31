@@ -32,14 +32,12 @@
    "phd_students": [
     {
       "name": "Jinxiao WU",
-      "title": "PhD Student",
       "details": "Year 1",
       "photo": "/images/assets/people/phd_students/wujinxiao.webp"
     },
     {
       "name": "Manman LI",
-      "title": "PhD Student",
-      "details": "Year 3",
+      "details": "Visiting PhD Student, Year 3",
       "photo": "/images/assets/people/phd_students/limanman.webp"
     }
   ],
