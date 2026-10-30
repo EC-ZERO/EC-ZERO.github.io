@@ -40,6 +40,13 @@
       "photo": "/images/assets/people/phd_students/limanman.webp"
     }
   ],
+  "master_students": [
+    {
+      "name": "黄涛",
+      "details": "硕士一年级",
+      "photo": "/images/assets/people/master_students/huangtao.webp"
+    }
+  ],
   "undergraduate_students": [
     {
       "name": "曹仲玉",
